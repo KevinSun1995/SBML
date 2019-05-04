@@ -1,0 +1,3205 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> expression
+Rule 1     expression -> LPAREN expression RPAREN
+Rule 2     expression -> POUND expression tuple
+Rule 3     expression -> expression LBRACKET expression RBRACKET
+Rule 4     expression -> list
+Rule 5     expression -> tuple
+Rule 6     series -> series COMMA expression
+Rule 7     series -> expression
+Rule 8     list -> LBRACKET series RBRACKET
+Rule 9     list -> LBRACKET RBRACKET
+Rule 10    tuple -> LPAREN series RPAREN
+Rule 11    tuple -> LPAREN RPAREN
+Rule 12    expression -> NOT expression
+Rule 13    expression -> expression PLUS expression
+Rule 14    expression -> expression MINUS expression
+Rule 15    expression -> expression TIMES expression
+Rule 16    expression -> expression DIVIDE expression
+Rule 17    expression -> expression EXP expression
+Rule 18    expression -> expression MOD expression
+Rule 19    expression -> expression DIV expression
+Rule 20    expression -> expression IN expression
+Rule 21    expression -> expression CONC expression
+Rule 22    expression -> expression LESS expression
+Rule 23    expression -> expression MORE expression
+Rule 24    expression -> expression EQUAL expression
+Rule 25    expression -> expression NOTEQUAL expression
+Rule 26    expression -> expression LESSE expression
+Rule 27    expression -> expression MOREE expression
+Rule 28    expression -> expression ANDALSO expression
+Rule 29    expression -> expression ORELSE expression
+Rule 30    expression -> NUMBER
+Rule 31    expression -> STRING
+Rule 32    expression -> BOOLEAN
+Rule 33    expression -> expression SEMI
+
+Terminals, with rules where they appear
+
+ANDALSO              : 28
+BOOLEAN              : 32
+COMMA                : 6
+CONC                 : 21
+DIV                  : 19
+DIVIDE               : 16
+EQUAL                : 24
+EXP                  : 17
+IN                   : 20
+LBRACKET             : 3 8 9
+LESS                 : 22
+LESSE                : 26
+LPAREN               : 1 10 11
+MINUS                : 14
+MOD                  : 18
+MORE                 : 23
+MOREE                : 27
+NOT                  : 12
+NOTEQUAL             : 25
+NUMBER               : 30
+ORELSE               : 29
+PLUS                 : 13
+POUND                : 2
+RBRACKET             : 3 8 9
+RPAREN               : 1 10 11
+SEMI                 : 33
+STRING               : 31
+TIMES                : 15
+error                : 
+
+Nonterminals, with rules where they appear
+
+expression           : 1 2 3 3 6 7 12 13 13 14 14 15 15 16 16 17 17 18 18 19 19 20 20 21 21 22 22 23 23 24 24 25 25 26 26 27 27 28 28 29 29 33 0
+list                 : 4
+series               : 6 8 10
+tuple                : 2 5
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . expression
+    (1) expression -> . LPAREN expression RPAREN
+    (2) expression -> . POUND expression tuple
+    (3) expression -> . expression LBRACKET expression RBRACKET
+    (4) expression -> . list
+    (5) expression -> . tuple
+    (12) expression -> . NOT expression
+    (13) expression -> . expression PLUS expression
+    (14) expression -> . expression MINUS expression
+    (15) expression -> . expression TIMES expression
+    (16) expression -> . expression DIVIDE expression
+    (17) expression -> . expression EXP expression
+    (18) expression -> . expression MOD expression
+    (19) expression -> . expression DIV expression
+    (20) expression -> . expression IN expression
+    (21) expression -> . expression CONC expression
+    (22) expression -> . expression LESS expression
+    (23) expression -> . expression MORE expression
+    (24) expression -> . expression EQUAL expression
+    (25) expression -> . expression NOTEQUAL expression
+    (26) expression -> . expression LESSE expression
+    (27) expression -> . expression MOREE expression
+    (28) expression -> . expression ANDALSO expression
+    (29) expression -> . expression ORELSE expression
+    (30) expression -> . NUMBER
+    (31) expression -> . STRING
+    (32) expression -> . BOOLEAN
+    (33) expression -> . expression SEMI
+    (8) list -> . LBRACKET series RBRACKET
+    (9) list -> . LBRACKET RBRACKET
+    (10) tuple -> . LPAREN series RPAREN
+    (11) tuple -> . LPAREN RPAREN
+
+    LPAREN          shift and go to state 2
+    POUND           shift and go to state 3
+    NOT             shift and go to state 7
+    NUMBER          shift and go to state 8
+    STRING          shift and go to state 9
+    BOOLEAN         shift and go to state 10
+    LBRACKET        shift and go to state 5
+
+    expression                     shift and go to state 1
+    tuple                          shift and go to state 4
+    list                           shift and go to state 6
+
+state 1
+
+    (0) S' -> expression .
+    (3) expression -> expression . LBRACKET expression RBRACKET
+    (13) expression -> expression . PLUS expression
+    (14) expression -> expression . MINUS expression
+    (15) expression -> expression . TIMES expression
+    (16) expression -> expression . DIVIDE expression
+    (17) expression -> expression . EXP expression
+    (18) expression -> expression . MOD expression
+    (19) expression -> expression . DIV expression
+    (20) expression -> expression . IN expression
+    (21) expression -> expression . CONC expression
+    (22) expression -> expression . LESS expression
+    (23) expression -> expression . MORE expression
+    (24) expression -> expression . EQUAL expression
+    (25) expression -> expression . NOTEQUAL expression
+    (26) expression -> expression . LESSE expression
+    (27) expression -> expression . MOREE expression
+    (28) expression -> expression . ANDALSO expression
+    (29) expression -> expression . ORELSE expression
+    (33) expression -> expression . SEMI
+
+    LBRACKET        shift and go to state 11
+    PLUS            shift and go to state 12
+    MINUS           shift and go to state 13
+    TIMES           shift and go to state 14
+    DIVIDE          shift and go to state 15
+    EXP             shift and go to state 16
+    MOD             shift and go to state 17
+    DIV             shift and go to state 18
+    IN              shift and go to state 19
+    CONC            shift and go to state 20
+    LESS            shift and go to state 21
+    MORE            shift and go to state 22
+    EQUAL           shift and go to state 23
+    NOTEQUAL        shift and go to state 24
+    LESSE           shift and go to state 25
+    MOREE           shift and go to state 26
+    ANDALSO         shift and go to state 27
+    ORELSE          shift and go to state 28
+    SEMI            shift and go to state 29
+
+
+state 2
+
+    (1) expression -> LPAREN . expression RPAREN
+    (10) tuple -> LPAREN . series RPAREN
+    (11) tuple -> LPAREN . RPAREN
+    (1) expression -> . LPAREN expression RPAREN
+    (2) expression -> . POUND expression tuple
+    (3) expression -> . expression LBRACKET expression RBRACKET
+    (4) expression -> . list
+    (5) expression -> . tuple
+    (12) expression -> . NOT expression
+    (13) expression -> . expression PLUS expression
+    (14) expression -> . expression MINUS expression
+    (15) expression -> . expression TIMES expression
+    (16) expression -> . expression DIVIDE expression
+    (17) expression -> . expression EXP expression
+    (18) expression -> . expression MOD expression
+    (19) expression -> . expression DIV expression
+    (20) expression -> . expression IN expression
+    (21) expression -> . expression CONC expression
+    (22) expression -> . expression LESS expression
+    (23) expression -> . expression MORE expression
+    (24) expression -> . expression EQUAL expression
+    (25) expression -> . expression NOTEQUAL expression
+    (26) expression -> . expression LESSE expression
+    (27) expression -> . expression MOREE expression
+    (28) expression -> . expression ANDALSO expression
+    (29) expression -> . expression ORELSE expression
+    (30) expression -> . NUMBER
+    (31) expression -> . STRING
+    (32) expression -> . BOOLEAN
+    (33) expression -> . expression SEMI
+    (6) series -> . series COMMA expression
+    (7) series -> . expression
+    (8) list -> . LBRACKET series RBRACKET
+    (9) list -> . LBRACKET RBRACKET
+    (10) tuple -> . LPAREN series RPAREN
+    (11) tuple -> . LPAREN RPAREN
+
+    RPAREN          shift and go to state 31
+    LPAREN          shift and go to state 2
+    POUND           shift and go to state 3
+    NOT             shift and go to state 7
+    NUMBER          shift and go to state 8
+    STRING          shift and go to state 9
+    BOOLEAN         shift and go to state 10
+    LBRACKET        shift and go to state 5
+
+    expression                     shift and go to state 30
+    series                         shift and go to state 32
+    tuple                          shift and go to state 4
+    list                           shift and go to state 6
+
+state 3
+
+    (2) expression -> POUND . expression tuple
+    (1) expression -> . LPAREN expression RPAREN
+    (2) expression -> . POUND expression tuple
+    (3) expression -> . expression LBRACKET expression RBRACKET
+    (4) expression -> . list
+    (5) expression -> . tuple
+    (12) expression -> . NOT expression
+    (13) expression -> . expression PLUS expression
+    (14) expression -> . expression MINUS expression
+    (15) expression -> . expression TIMES expression
+    (16) expression -> . expression DIVIDE expression
+    (17) expression -> . expression EXP expression
+    (18) expression -> . expression MOD expression
+    (19) expression -> . expression DIV expression
+    (20) expression -> . expression IN expression
+    (21) expression -> . expression CONC expression
+    (22) expression -> . expression LESS expression
+    (23) expression -> . expression MORE expression
+    (24) expression -> . expression EQUAL expression
+    (25) expression -> . expression NOTEQUAL expression
+    (26) expression -> . expression LESSE expression
+    (27) expression -> . expression MOREE expression
+    (28) expression -> . expression ANDALSO expression
+    (29) expression -> . expression ORELSE expression
+    (30) expression -> . NUMBER
+    (31) expression -> . STRING
+    (32) expression -> . BOOLEAN
+    (33) expression -> . expression SEMI
+    (8) list -> . LBRACKET series RBRACKET
+    (9) list -> . LBRACKET RBRACKET
+    (10) tuple -> . LPAREN series RPAREN
+    (11) tuple -> . LPAREN RPAREN
+
+    LPAREN          shift and go to state 2
+    POUND           shift and go to state 3
+    NOT             shift and go to state 7
+    NUMBER          shift and go to state 8
+    STRING          shift and go to state 9
+    BOOLEAN         shift and go to state 10
+    LBRACKET        shift and go to state 5
+
+    expression                     shift and go to state 33
+    tuple                          shift and go to state 4
+    list                           shift and go to state 6
+
+state 4
+
+    (5) expression -> tuple .
+
+    LBRACKET        reduce using rule 5 (expression -> tuple .)
+    PLUS            reduce using rule 5 (expression -> tuple .)
+    MINUS           reduce using rule 5 (expression -> tuple .)
+    TIMES           reduce using rule 5 (expression -> tuple .)
+    DIVIDE          reduce using rule 5 (expression -> tuple .)
+    EXP             reduce using rule 5 (expression -> tuple .)
+    MOD             reduce using rule 5 (expression -> tuple .)
+    DIV             reduce using rule 5 (expression -> tuple .)
+    IN              reduce using rule 5 (expression -> tuple .)
+    CONC            reduce using rule 5 (expression -> tuple .)
+    LESS            reduce using rule 5 (expression -> tuple .)
+    MORE            reduce using rule 5 (expression -> tuple .)
+    EQUAL           reduce using rule 5 (expression -> tuple .)
+    NOTEQUAL        reduce using rule 5 (expression -> tuple .)
+    LESSE           reduce using rule 5 (expression -> tuple .)
+    MOREE           reduce using rule 5 (expression -> tuple .)
+    ANDALSO         reduce using rule 5 (expression -> tuple .)
+    ORELSE          reduce using rule 5 (expression -> tuple .)
+    SEMI            reduce using rule 5 (expression -> tuple .)
+    $end            reduce using rule 5 (expression -> tuple .)
+    RPAREN          reduce using rule 5 (expression -> tuple .)
+    COMMA           reduce using rule 5 (expression -> tuple .)
+    LPAREN          reduce using rule 5 (expression -> tuple .)
+    RBRACKET        reduce using rule 5 (expression -> tuple .)
+
+
+state 5
+
+    (8) list -> LBRACKET . series RBRACKET
+    (9) list -> LBRACKET . RBRACKET
+    (6) series -> . series COMMA expression
+    (7) series -> . expression
+    (1) expression -> . LPAREN expression RPAREN
+    (2) expression -> . POUND expression tuple
+    (3) expression -> . expression LBRACKET expression RBRACKET
+    (4) expression -> . list
+    (5) expression -> . tuple
+    (12) expression -> . NOT expression
+    (13) expression -> . expression PLUS expression
+    (14) expression -> . expression MINUS expression
+    (15) expression -> . expression TIMES expression
+    (16) expression -> . expression DIVIDE expression
+    (17) expression -> . expression EXP expression
+    (18) expression -> . expression MOD expression
+    (19) expression -> . expression DIV expression
+    (20) expression -> . expression IN expression
+    (21) expression -> . expression CONC expression
+    (22) expression -> . expression LESS expression
+    (23) expression -> . expression MORE expression
+    (24) expression -> . expression EQUAL expression
+    (25) expression -> . expression NOTEQUAL expression
+    (26) expression -> . expression LESSE expression
+    (27) expression -> . expression MOREE expression
+    (28) expression -> . expression ANDALSO expression
+    (29) expression -> . expression ORELSE expression
+    (30) expression -> . NUMBER
+    (31) expression -> . STRING
+    (32) expression -> . BOOLEAN
+    (33) expression -> . expression SEMI
+    (8) list -> . LBRACKET series RBRACKET
+    (9) list -> . LBRACKET RBRACKET
+    (10) tuple -> . LPAREN series RPAREN
+    (11) tuple -> . LPAREN RPAREN
+
+    RBRACKET        shift and go to state 35
+    LPAREN          shift and go to state 2
+    POUND           shift and go to state 3
+    NOT             shift and go to state 7
+    NUMBER          shift and go to state 8
+    STRING          shift and go to state 9
+    BOOLEAN         shift and go to state 10
+    LBRACKET        shift and go to state 5
+
+    series                         shift and go to state 34
+    expression                     shift and go to state 36
+    tuple                          shift and go to state 4
+    list                           shift and go to state 6
+
+state 6
+
+    (4) expression -> list .
+
+    LBRACKET        reduce using rule 4 (expression -> list .)
+    PLUS            reduce using rule 4 (expression -> list .)
+    MINUS           reduce using rule 4 (expression -> list .)
+    TIMES           reduce using rule 4 (expression -> list .)
+    DIVIDE          reduce using rule 4 (expression -> list .)
+    EXP             reduce using rule 4 (expression -> list .)
+    MOD             reduce using rule 4 (expression -> list .)
+    DIV             reduce using rule 4 (expression -> list .)
+    IN              reduce using rule 4 (expression -> list .)
+    CONC            reduce using rule 4 (expression -> list .)
+    LESS            reduce using rule 4 (expression -> list .)
+    MORE            reduce using rule 4 (expression -> list .)
+    EQUAL           reduce using rule 4 (expression -> list .)
+    NOTEQUAL        reduce using rule 4 (expression -> list .)
+    LESSE           reduce using rule 4 (expression -> list .)
+    MOREE           reduce using rule 4 (expression -> list .)
+    ANDALSO         reduce using rule 4 (expression -> list .)
+    ORELSE          reduce using rule 4 (expression -> list .)
+    SEMI            reduce using rule 4 (expression -> list .)
+    $end            reduce using rule 4 (expression -> list .)
+    RPAREN          reduce using rule 4 (expression -> list .)
+    COMMA           reduce using rule 4 (expression -> list .)
+    LPAREN          reduce using rule 4 (expression -> list .)
+    RBRACKET        reduce using rule 4 (expression -> list .)
+
+
+state 7
+
+    (12) expression -> NOT . expression
+    (1) expression -> . LPAREN expression RPAREN
+    (2) expression -> . POUND expression tuple
+    (3) expression -> . expression LBRACKET expression RBRACKET
+    (4) expression -> . list
+    (5) expression -> . tuple
+    (12) expression -> . NOT expression
+    (13) expression -> . expression PLUS expression
+    (14) expression -> . expression MINUS expression
+    (15) expression -> . expression TIMES expression
+    (16) expression -> . expression DIVIDE expression
+    (17) expression -> . expression EXP expression
+    (18) expression -> . expression MOD expression
+    (19) expression -> . expression DIV expression
+    (20) expression -> . expression IN expression
+    (21) expression -> . expression CONC expression
+    (22) expression -> . expression LESS expression
+    (23) expression -> . expression MORE expression
+    (24) expression -> . expression EQUAL expression
+    (25) expression -> . expression NOTEQUAL expression
+    (26) expression -> . expression LESSE expression
+    (27) expression -> . expression MOREE expression
+    (28) expression -> . expression ANDALSO expression
+    (29) expression -> . expression ORELSE expression
+    (30) expression -> . NUMBER
+    (31) expression -> . STRING
+    (32) expression -> . BOOLEAN
+    (33) expression -> . expression SEMI
+    (8) list -> . LBRACKET series RBRACKET
+    (9) list -> . LBRACKET RBRACKET
+    (10) tuple -> . LPAREN series RPAREN
+    (11) tuple -> . LPAREN RPAREN
+
+    LPAREN          shift and go to state 2
+    POUND           shift and go to state 3
+    NOT             shift and go to state 7
+    NUMBER          shift and go to state 8
+    STRING          shift and go to state 9
+    BOOLEAN         shift and go to state 10
+    LBRACKET        shift and go to state 5
+
+    expression                     shift and go to state 37
+    tuple                          shift and go to state 4
+    list                           shift and go to state 6
+
+state 8
+
+    (30) expression -> NUMBER .
+
+    LBRACKET        reduce using rule 30 (expression -> NUMBER .)
+    PLUS            reduce using rule 30 (expression -> NUMBER .)
+    MINUS           reduce using rule 30 (expression -> NUMBER .)
+    TIMES           reduce using rule 30 (expression -> NUMBER .)
+    DIVIDE          reduce using rule 30 (expression -> NUMBER .)
+    EXP             reduce using rule 30 (expression -> NUMBER .)
+    MOD             reduce using rule 30 (expression -> NUMBER .)
+    DIV             reduce using rule 30 (expression -> NUMBER .)
+    IN              reduce using rule 30 (expression -> NUMBER .)
+    CONC            reduce using rule 30 (expression -> NUMBER .)
+    LESS            reduce using rule 30 (expression -> NUMBER .)
+    MORE            reduce using rule 30 (expression -> NUMBER .)
+    EQUAL           reduce using rule 30 (expression -> NUMBER .)
+    NOTEQUAL        reduce using rule 30 (expression -> NUMBER .)
+    LESSE           reduce using rule 30 (expression -> NUMBER .)
+    MOREE           reduce using rule 30 (expression -> NUMBER .)
+    ANDALSO         reduce using rule 30 (expression -> NUMBER .)
+    ORELSE          reduce using rule 30 (expression -> NUMBER .)
+    SEMI            reduce using rule 30 (expression -> NUMBER .)
+    $end            reduce using rule 30 (expression -> NUMBER .)
+    RPAREN          reduce using rule 30 (expression -> NUMBER .)
+    COMMA           reduce using rule 30 (expression -> NUMBER .)
+    LPAREN          reduce using rule 30 (expression -> NUMBER .)
+    RBRACKET        reduce using rule 30 (expression -> NUMBER .)
+
+
+state 9
+
+    (31) expression -> STRING .
+
+    LBRACKET        reduce using rule 31 (expression -> STRING .)
+    PLUS            reduce using rule 31 (expression -> STRING .)
+    MINUS           reduce using rule 31 (expression -> STRING .)
+    TIMES           reduce using rule 31 (expression -> STRING .)
+    DIVIDE          reduce using rule 31 (expression -> STRING .)
+    EXP             reduce using rule 31 (expression -> STRING .)
+    MOD             reduce using rule 31 (expression -> STRING .)
+    DIV             reduce using rule 31 (expression -> STRING .)
+    IN              reduce using rule 31 (expression -> STRING .)
+    CONC            reduce using rule 31 (expression -> STRING .)
+    LESS            reduce using rule 31 (expression -> STRING .)
+    MORE            reduce using rule 31 (expression -> STRING .)
+    EQUAL           reduce using rule 31 (expression -> STRING .)
+    NOTEQUAL        reduce using rule 31 (expression -> STRING .)
+    LESSE           reduce using rule 31 (expression -> STRING .)
+    MOREE           reduce using rule 31 (expression -> STRING .)
+    ANDALSO         reduce using rule 31 (expression -> STRING .)
+    ORELSE          reduce using rule 31 (expression -> STRING .)
+    SEMI            reduce using rule 31 (expression -> STRING .)
+    $end            reduce using rule 31 (expression -> STRING .)
+    RPAREN          reduce using rule 31 (expression -> STRING .)
+    COMMA           reduce using rule 31 (expression -> STRING .)
+    LPAREN          reduce using rule 31 (expression -> STRING .)
+    RBRACKET        reduce using rule 31 (expression -> STRING .)
+
+
+state 10
+
+    (32) expression -> BOOLEAN .
+
+    LBRACKET        reduce using rule 32 (expression -> BOOLEAN .)
+    PLUS            reduce using rule 32 (expression -> BOOLEAN .)
+    MINUS           reduce using rule 32 (expression -> BOOLEAN .)
+    TIMES           reduce using rule 32 (expression -> BOOLEAN .)
+    DIVIDE          reduce using rule 32 (expression -> BOOLEAN .)
+    EXP             reduce using rule 32 (expression -> BOOLEAN .)
+    MOD             reduce using rule 32 (expression -> BOOLEAN .)
+    DIV             reduce using rule 32 (expression -> BOOLEAN .)
+    IN              reduce using rule 32 (expression -> BOOLEAN .)
+    CONC            reduce using rule 32 (expression -> BOOLEAN .)
+    LESS            reduce using rule 32 (expression -> BOOLEAN .)
+    MORE            reduce using rule 32 (expression -> BOOLEAN .)
+    EQUAL           reduce using rule 32 (expression -> BOOLEAN .)
+    NOTEQUAL        reduce using rule 32 (expression -> BOOLEAN .)
+    LESSE           reduce using rule 32 (expression -> BOOLEAN .)
+    MOREE           reduce using rule 32 (expression -> BOOLEAN .)
+    ANDALSO         reduce using rule 32 (expression -> BOOLEAN .)
+    ORELSE          reduce using rule 32 (expression -> BOOLEAN .)
+    SEMI            reduce using rule 32 (expression -> BOOLEAN .)
+    $end            reduce using rule 32 (expression -> BOOLEAN .)
+    RPAREN          reduce using rule 32 (expression -> BOOLEAN .)
+    COMMA           reduce using rule 32 (expression -> BOOLEAN .)
+    LPAREN          reduce using rule 32 (expression -> BOOLEAN .)
+    RBRACKET        reduce using rule 32 (expression -> BOOLEAN .)
+
+
+state 11
+
+    (3) expression -> expression LBRACKET . expression RBRACKET
+    (1) expression -> . LPAREN expression RPAREN
+    (2) expression -> . POUND expression tuple
+    (3) expression -> . expression LBRACKET expression RBRACKET
+    (4) expression -> . list
+    (5) expression -> . tuple
+    (12) expression -> . NOT expression
+    (13) expression -> . expression PLUS expression
+    (14) expression -> . expression MINUS expression
+    (15) expression -> . expression TIMES expression
+    (16) expression -> . expression DIVIDE expression
+    (17) expression -> . expression EXP expression
+    (18) expression -> . expression MOD expression
+    (19) expression -> . expression DIV expression
+    (20) expression -> . expression IN expression
+    (21) expression -> . expression CONC expression
+    (22) expression -> . expression LESS expression
+    (23) expression -> . expression MORE expression
+    (24) expression -> . expression EQUAL expression
+    (25) expression -> . expression NOTEQUAL expression
+    (26) expression -> . expression LESSE expression
+    (27) expression -> . expression MOREE expression
+    (28) expression -> . expression ANDALSO expression
+    (29) expression -> . expression ORELSE expression
+    (30) expression -> . NUMBER
+    (31) expression -> . STRING
+    (32) expression -> . BOOLEAN
+    (33) expression -> . expression SEMI
+    (8) list -> . LBRACKET series RBRACKET
+    (9) list -> . LBRACKET RBRACKET
+    (10) tuple -> . LPAREN series RPAREN
+    (11) tuple -> . LPAREN RPAREN
+
+    LPAREN          shift and go to state 2
+    POUND           shift and go to state 3
+    NOT             shift and go to state 7
+    NUMBER          shift and go to state 8
+    STRING          shift and go to state 9
+    BOOLEAN         shift and go to state 10
+    LBRACKET        shift and go to state 5
+
+    expression                     shift and go to state 38
+    tuple                          shift and go to state 4
+    list                           shift and go to state 6
+
+state 12
+
+    (13) expression -> expression PLUS . expression
+    (1) expression -> . LPAREN expression RPAREN
+    (2) expression -> . POUND expression tuple
+    (3) expression -> . expression LBRACKET expression RBRACKET
+    (4) expression -> . list
+    (5) expression -> . tuple
+    (12) expression -> . NOT expression
+    (13) expression -> . expression PLUS expression
+    (14) expression -> . expression MINUS expression
+    (15) expression -> . expression TIMES expression
+    (16) expression -> . expression DIVIDE expression
+    (17) expression -> . expression EXP expression
+    (18) expression -> . expression MOD expression
+    (19) expression -> . expression DIV expression
+    (20) expression -> . expression IN expression
+    (21) expression -> . expression CONC expression
+    (22) expression -> . expression LESS expression
+    (23) expression -> . expression MORE expression
+    (24) expression -> . expression EQUAL expression
+    (25) expression -> . expression NOTEQUAL expression
+    (26) expression -> . expression LESSE expression
+    (27) expression -> . expression MOREE expression
+    (28) expression -> . expression ANDALSO expression
+    (29) expression -> . expression ORELSE expression
+    (30) expression -> . NUMBER
+    (31) expression -> . STRING
+    (32) expression -> . BOOLEAN
+    (33) expression -> . expression SEMI
+    (8) list -> . LBRACKET series RBRACKET
+    (9) list -> . LBRACKET RBRACKET
+    (10) tuple -> . LPAREN series RPAREN
+    (11) tuple -> . LPAREN RPAREN
+
+    LPAREN          shift and go to state 2
+    POUND           shift and go to state 3
+    NOT             shift and go to state 7
+    NUMBER          shift and go to state 8
+    STRING          shift and go to state 9
+    BOOLEAN         shift and go to state 10
+    LBRACKET        shift and go to state 5
+
+    expression                     shift and go to state 39
+    tuple                          shift and go to state 4
+    list                           shift and go to state 6
+
+state 13
+
+    (14) expression -> expression MINUS . expression
+    (1) expression -> . LPAREN expression RPAREN
+    (2) expression -> . POUND expression tuple
+    (3) expression -> . expression LBRACKET expression RBRACKET
+    (4) expression -> . list
+    (5) expression -> . tuple
+    (12) expression -> . NOT expression
+    (13) expression -> . expression PLUS expression
+    (14) expression -> . expression MINUS expression
+    (15) expression -> . expression TIMES expression
+    (16) expression -> . expression DIVIDE expression
+    (17) expression -> . expression EXP expression
+    (18) expression -> . expression MOD expression
+    (19) expression -> . expression DIV expression
+    (20) expression -> . expression IN expression
+    (21) expression -> . expression CONC expression
+    (22) expression -> . expression LESS expression
+    (23) expression -> . expression MORE expression
+    (24) expression -> . expression EQUAL expression
+    (25) expression -> . expression NOTEQUAL expression
+    (26) expression -> . expression LESSE expression
+    (27) expression -> . expression MOREE expression
+    (28) expression -> . expression ANDALSO expression
+    (29) expression -> . expression ORELSE expression
+    (30) expression -> . NUMBER
+    (31) expression -> . STRING
+    (32) expression -> . BOOLEAN
+    (33) expression -> . expression SEMI
+    (8) list -> . LBRACKET series RBRACKET
+    (9) list -> . LBRACKET RBRACKET
+    (10) tuple -> . LPAREN series RPAREN
+    (11) tuple -> . LPAREN RPAREN
+
+    LPAREN          shift and go to state 2
+    POUND           shift and go to state 3
+    NOT             shift and go to state 7
+    NUMBER          shift and go to state 8
+    STRING          shift and go to state 9
+    BOOLEAN         shift and go to state 10
+    LBRACKET        shift and go to state 5
+
+    expression                     shift and go to state 40
+    tuple                          shift and go to state 4
+    list                           shift and go to state 6
+
+state 14
+
+    (15) expression -> expression TIMES . expression
+    (1) expression -> . LPAREN expression RPAREN
+    (2) expression -> . POUND expression tuple
+    (3) expression -> . expression LBRACKET expression RBRACKET
+    (4) expression -> . list
+    (5) expression -> . tuple
+    (12) expression -> . NOT expression
+    (13) expression -> . expression PLUS expression
+    (14) expression -> . expression MINUS expression
+    (15) expression -> . expression TIMES expression
+    (16) expression -> . expression DIVIDE expression
+    (17) expression -> . expression EXP expression
+    (18) expression -> . expression MOD expression
+    (19) expression -> . expression DIV expression
+    (20) expression -> . expression IN expression
+    (21) expression -> . expression CONC expression
+    (22) expression -> . expression LESS expression
+    (23) expression -> . expression MORE expression
+    (24) expression -> . expression EQUAL expression
+    (25) expression -> . expression NOTEQUAL expression
+    (26) expression -> . expression LESSE expression
+    (27) expression -> . expression MOREE expression
+    (28) expression -> . expression ANDALSO expression
+    (29) expression -> . expression ORELSE expression
+    (30) expression -> . NUMBER
+    (31) expression -> . STRING
+    (32) expression -> . BOOLEAN
+    (33) expression -> . expression SEMI
+    (8) list -> . LBRACKET series RBRACKET
+    (9) list -> . LBRACKET RBRACKET
+    (10) tuple -> . LPAREN series RPAREN
+    (11) tuple -> . LPAREN RPAREN
+
+    LPAREN          shift and go to state 2
+    POUND           shift and go to state 3
+    NOT             shift and go to state 7
+    NUMBER          shift and go to state 8
+    STRING          shift and go to state 9
+    BOOLEAN         shift and go to state 10
+    LBRACKET        shift and go to state 5
+
+    expression                     shift and go to state 41
+    tuple                          shift and go to state 4
+    list                           shift and go to state 6
+
+state 15
+
+    (16) expression -> expression DIVIDE . expression
+    (1) expression -> . LPAREN expression RPAREN
+    (2) expression -> . POUND expression tuple
+    (3) expression -> . expression LBRACKET expression RBRACKET
+    (4) expression -> . list
+    (5) expression -> . tuple
+    (12) expression -> . NOT expression
+    (13) expression -> . expression PLUS expression
+    (14) expression -> . expression MINUS expression
+    (15) expression -> . expression TIMES expression
+    (16) expression -> . expression DIVIDE expression
+    (17) expression -> . expression EXP expression
+    (18) expression -> . expression MOD expression
+    (19) expression -> . expression DIV expression
+    (20) expression -> . expression IN expression
+    (21) expression -> . expression CONC expression
+    (22) expression -> . expression LESS expression
+    (23) expression -> . expression MORE expression
+    (24) expression -> . expression EQUAL expression
+    (25) expression -> . expression NOTEQUAL expression
+    (26) expression -> . expression LESSE expression
+    (27) expression -> . expression MOREE expression
+    (28) expression -> . expression ANDALSO expression
+    (29) expression -> . expression ORELSE expression
+    (30) expression -> . NUMBER
+    (31) expression -> . STRING
+    (32) expression -> . BOOLEAN
+    (33) expression -> . expression SEMI
+    (8) list -> . LBRACKET series RBRACKET
+    (9) list -> . LBRACKET RBRACKET
+    (10) tuple -> . LPAREN series RPAREN
+    (11) tuple -> . LPAREN RPAREN
+
+    LPAREN          shift and go to state 2
+    POUND           shift and go to state 3
+    NOT             shift and go to state 7
+    NUMBER          shift and go to state 8
+    STRING          shift and go to state 9
+    BOOLEAN         shift and go to state 10
+    LBRACKET        shift and go to state 5
+
+    expression                     shift and go to state 42
+    tuple                          shift and go to state 4
+    list                           shift and go to state 6
+
+state 16
+
+    (17) expression -> expression EXP . expression
+    (1) expression -> . LPAREN expression RPAREN
+    (2) expression -> . POUND expression tuple
+    (3) expression -> . expression LBRACKET expression RBRACKET
+    (4) expression -> . list
+    (5) expression -> . tuple
+    (12) expression -> . NOT expression
+    (13) expression -> . expression PLUS expression
+    (14) expression -> . expression MINUS expression
+    (15) expression -> . expression TIMES expression
+    (16) expression -> . expression DIVIDE expression
+    (17) expression -> . expression EXP expression
+    (18) expression -> . expression MOD expression
+    (19) expression -> . expression DIV expression
+    (20) expression -> . expression IN expression
+    (21) expression -> . expression CONC expression
+    (22) expression -> . expression LESS expression
+    (23) expression -> . expression MORE expression
+    (24) expression -> . expression EQUAL expression
+    (25) expression -> . expression NOTEQUAL expression
+    (26) expression -> . expression LESSE expression
+    (27) expression -> . expression MOREE expression
+    (28) expression -> . expression ANDALSO expression
+    (29) expression -> . expression ORELSE expression
+    (30) expression -> . NUMBER
+    (31) expression -> . STRING
+    (32) expression -> . BOOLEAN
+    (33) expression -> . expression SEMI
+    (8) list -> . LBRACKET series RBRACKET
+    (9) list -> . LBRACKET RBRACKET
+    (10) tuple -> . LPAREN series RPAREN
+    (11) tuple -> . LPAREN RPAREN
+
+    LPAREN          shift and go to state 2
+    POUND           shift and go to state 3
+    NOT             shift and go to state 7
+    NUMBER          shift and go to state 8
+    STRING          shift and go to state 9
+    BOOLEAN         shift and go to state 10
+    LBRACKET        shift and go to state 5
+
+    expression                     shift and go to state 43
+    tuple                          shift and go to state 4
+    list                           shift and go to state 6
+
+state 17
+
+    (18) expression -> expression MOD . expression
+    (1) expression -> . LPAREN expression RPAREN
+    (2) expression -> . POUND expression tuple
+    (3) expression -> . expression LBRACKET expression RBRACKET
+    (4) expression -> . list
+    (5) expression -> . tuple
+    (12) expression -> . NOT expression
+    (13) expression -> . expression PLUS expression
+    (14) expression -> . expression MINUS expression
+    (15) expression -> . expression TIMES expression
+    (16) expression -> . expression DIVIDE expression
+    (17) expression -> . expression EXP expression
+    (18) expression -> . expression MOD expression
+    (19) expression -> . expression DIV expression
+    (20) expression -> . expression IN expression
+    (21) expression -> . expression CONC expression
+    (22) expression -> . expression LESS expression
+    (23) expression -> . expression MORE expression
+    (24) expression -> . expression EQUAL expression
+    (25) expression -> . expression NOTEQUAL expression
+    (26) expression -> . expression LESSE expression
+    (27) expression -> . expression MOREE expression
+    (28) expression -> . expression ANDALSO expression
+    (29) expression -> . expression ORELSE expression
+    (30) expression -> . NUMBER
+    (31) expression -> . STRING
+    (32) expression -> . BOOLEAN
+    (33) expression -> . expression SEMI
+    (8) list -> . LBRACKET series RBRACKET
+    (9) list -> . LBRACKET RBRACKET
+    (10) tuple -> . LPAREN series RPAREN
+    (11) tuple -> . LPAREN RPAREN
+
+    LPAREN          shift and go to state 2
+    POUND           shift and go to state 3
+    NOT             shift and go to state 7
+    NUMBER          shift and go to state 8
+    STRING          shift and go to state 9
+    BOOLEAN         shift and go to state 10
+    LBRACKET        shift and go to state 5
+
+    expression                     shift and go to state 44
+    tuple                          shift and go to state 4
+    list                           shift and go to state 6
+
+state 18
+
+    (19) expression -> expression DIV . expression
+    (1) expression -> . LPAREN expression RPAREN
+    (2) expression -> . POUND expression tuple
+    (3) expression -> . expression LBRACKET expression RBRACKET
+    (4) expression -> . list
+    (5) expression -> . tuple
+    (12) expression -> . NOT expression
+    (13) expression -> . expression PLUS expression
+    (14) expression -> . expression MINUS expression
+    (15) expression -> . expression TIMES expression
+    (16) expression -> . expression DIVIDE expression
+    (17) expression -> . expression EXP expression
+    (18) expression -> . expression MOD expression
+    (19) expression -> . expression DIV expression
+    (20) expression -> . expression IN expression
+    (21) expression -> . expression CONC expression
+    (22) expression -> . expression LESS expression
+    (23) expression -> . expression MORE expression
+    (24) expression -> . expression EQUAL expression
+    (25) expression -> . expression NOTEQUAL expression
+    (26) expression -> . expression LESSE expression
+    (27) expression -> . expression MOREE expression
+    (28) expression -> . expression ANDALSO expression
+    (29) expression -> . expression ORELSE expression
+    (30) expression -> . NUMBER
+    (31) expression -> . STRING
+    (32) expression -> . BOOLEAN
+    (33) expression -> . expression SEMI
+    (8) list -> . LBRACKET series RBRACKET
+    (9) list -> . LBRACKET RBRACKET
+    (10) tuple -> . LPAREN series RPAREN
+    (11) tuple -> . LPAREN RPAREN
+
+    LPAREN          shift and go to state 2
+    POUND           shift and go to state 3
+    NOT             shift and go to state 7
+    NUMBER          shift and go to state 8
+    STRING          shift and go to state 9
+    BOOLEAN         shift and go to state 10
+    LBRACKET        shift and go to state 5
+
+    expression                     shift and go to state 45
+    tuple                          shift and go to state 4
+    list                           shift and go to state 6
+
+state 19
+
+    (20) expression -> expression IN . expression
+    (1) expression -> . LPAREN expression RPAREN
+    (2) expression -> . POUND expression tuple
+    (3) expression -> . expression LBRACKET expression RBRACKET
+    (4) expression -> . list
+    (5) expression -> . tuple
+    (12) expression -> . NOT expression
+    (13) expression -> . expression PLUS expression
+    (14) expression -> . expression MINUS expression
+    (15) expression -> . expression TIMES expression
+    (16) expression -> . expression DIVIDE expression
+    (17) expression -> . expression EXP expression
+    (18) expression -> . expression MOD expression
+    (19) expression -> . expression DIV expression
+    (20) expression -> . expression IN expression
+    (21) expression -> . expression CONC expression
+    (22) expression -> . expression LESS expression
+    (23) expression -> . expression MORE expression
+    (24) expression -> . expression EQUAL expression
+    (25) expression -> . expression NOTEQUAL expression
+    (26) expression -> . expression LESSE expression
+    (27) expression -> . expression MOREE expression
+    (28) expression -> . expression ANDALSO expression
+    (29) expression -> . expression ORELSE expression
+    (30) expression -> . NUMBER
+    (31) expression -> . STRING
+    (32) expression -> . BOOLEAN
+    (33) expression -> . expression SEMI
+    (8) list -> . LBRACKET series RBRACKET
+    (9) list -> . LBRACKET RBRACKET
+    (10) tuple -> . LPAREN series RPAREN
+    (11) tuple -> . LPAREN RPAREN
+
+    LPAREN          shift and go to state 2
+    POUND           shift and go to state 3
+    NOT             shift and go to state 7
+    NUMBER          shift and go to state 8
+    STRING          shift and go to state 9
+    BOOLEAN         shift and go to state 10
+    LBRACKET        shift and go to state 5
+
+    expression                     shift and go to state 46
+    tuple                          shift and go to state 4
+    list                           shift and go to state 6
+
+state 20
+
+    (21) expression -> expression CONC . expression
+    (1) expression -> . LPAREN expression RPAREN
+    (2) expression -> . POUND expression tuple
+    (3) expression -> . expression LBRACKET expression RBRACKET
+    (4) expression -> . list
+    (5) expression -> . tuple
+    (12) expression -> . NOT expression
+    (13) expression -> . expression PLUS expression
+    (14) expression -> . expression MINUS expression
+    (15) expression -> . expression TIMES expression
+    (16) expression -> . expression DIVIDE expression
+    (17) expression -> . expression EXP expression
+    (18) expression -> . expression MOD expression
+    (19) expression -> . expression DIV expression
+    (20) expression -> . expression IN expression
+    (21) expression -> . expression CONC expression
+    (22) expression -> . expression LESS expression
+    (23) expression -> . expression MORE expression
+    (24) expression -> . expression EQUAL expression
+    (25) expression -> . expression NOTEQUAL expression
+    (26) expression -> . expression LESSE expression
+    (27) expression -> . expression MOREE expression
+    (28) expression -> . expression ANDALSO expression
+    (29) expression -> . expression ORELSE expression
+    (30) expression -> . NUMBER
+    (31) expression -> . STRING
+    (32) expression -> . BOOLEAN
+    (33) expression -> . expression SEMI
+    (8) list -> . LBRACKET series RBRACKET
+    (9) list -> . LBRACKET RBRACKET
+    (10) tuple -> . LPAREN series RPAREN
+    (11) tuple -> . LPAREN RPAREN
+
+    LPAREN          shift and go to state 2
+    POUND           shift and go to state 3
+    NOT             shift and go to state 7
+    NUMBER          shift and go to state 8
+    STRING          shift and go to state 9
+    BOOLEAN         shift and go to state 10
+    LBRACKET        shift and go to state 5
+
+    expression                     shift and go to state 47
+    tuple                          shift and go to state 4
+    list                           shift and go to state 6
+
+state 21
+
+    (22) expression -> expression LESS . expression
+    (1) expression -> . LPAREN expression RPAREN
+    (2) expression -> . POUND expression tuple
+    (3) expression -> . expression LBRACKET expression RBRACKET
+    (4) expression -> . list
+    (5) expression -> . tuple
+    (12) expression -> . NOT expression
+    (13) expression -> . expression PLUS expression
+    (14) expression -> . expression MINUS expression
+    (15) expression -> . expression TIMES expression
+    (16) expression -> . expression DIVIDE expression
+    (17) expression -> . expression EXP expression
+    (18) expression -> . expression MOD expression
+    (19) expression -> . expression DIV expression
+    (20) expression -> . expression IN expression
+    (21) expression -> . expression CONC expression
+    (22) expression -> . expression LESS expression
+    (23) expression -> . expression MORE expression
+    (24) expression -> . expression EQUAL expression
+    (25) expression -> . expression NOTEQUAL expression
+    (26) expression -> . expression LESSE expression
+    (27) expression -> . expression MOREE expression
+    (28) expression -> . expression ANDALSO expression
+    (29) expression -> . expression ORELSE expression
+    (30) expression -> . NUMBER
+    (31) expression -> . STRING
+    (32) expression -> . BOOLEAN
+    (33) expression -> . expression SEMI
+    (8) list -> . LBRACKET series RBRACKET
+    (9) list -> . LBRACKET RBRACKET
+    (10) tuple -> . LPAREN series RPAREN
+    (11) tuple -> . LPAREN RPAREN
+
+    LPAREN          shift and go to state 2
+    POUND           shift and go to state 3
+    NOT             shift and go to state 7
+    NUMBER          shift and go to state 8
+    STRING          shift and go to state 9
+    BOOLEAN         shift and go to state 10
+    LBRACKET        shift and go to state 5
+
+    expression                     shift and go to state 48
+    tuple                          shift and go to state 4
+    list                           shift and go to state 6
+
+state 22
+
+    (23) expression -> expression MORE . expression
+    (1) expression -> . LPAREN expression RPAREN
+    (2) expression -> . POUND expression tuple
+    (3) expression -> . expression LBRACKET expression RBRACKET
+    (4) expression -> . list
+    (5) expression -> . tuple
+    (12) expression -> . NOT expression
+    (13) expression -> . expression PLUS expression
+    (14) expression -> . expression MINUS expression
+    (15) expression -> . expression TIMES expression
+    (16) expression -> . expression DIVIDE expression
+    (17) expression -> . expression EXP expression
+    (18) expression -> . expression MOD expression
+    (19) expression -> . expression DIV expression
+    (20) expression -> . expression IN expression
+    (21) expression -> . expression CONC expression
+    (22) expression -> . expression LESS expression
+    (23) expression -> . expression MORE expression
+    (24) expression -> . expression EQUAL expression
+    (25) expression -> . expression NOTEQUAL expression
+    (26) expression -> . expression LESSE expression
+    (27) expression -> . expression MOREE expression
+    (28) expression -> . expression ANDALSO expression
+    (29) expression -> . expression ORELSE expression
+    (30) expression -> . NUMBER
+    (31) expression -> . STRING
+    (32) expression -> . BOOLEAN
+    (33) expression -> . expression SEMI
+    (8) list -> . LBRACKET series RBRACKET
+    (9) list -> . LBRACKET RBRACKET
+    (10) tuple -> . LPAREN series RPAREN
+    (11) tuple -> . LPAREN RPAREN
+
+    LPAREN          shift and go to state 2
+    POUND           shift and go to state 3
+    NOT             shift and go to state 7
+    NUMBER          shift and go to state 8
+    STRING          shift and go to state 9
+    BOOLEAN         shift and go to state 10
+    LBRACKET        shift and go to state 5
+
+    expression                     shift and go to state 49
+    tuple                          shift and go to state 4
+    list                           shift and go to state 6
+
+state 23
+
+    (24) expression -> expression EQUAL . expression
+    (1) expression -> . LPAREN expression RPAREN
+    (2) expression -> . POUND expression tuple
+    (3) expression -> . expression LBRACKET expression RBRACKET
+    (4) expression -> . list
+    (5) expression -> . tuple
+    (12) expression -> . NOT expression
+    (13) expression -> . expression PLUS expression
+    (14) expression -> . expression MINUS expression
+    (15) expression -> . expression TIMES expression
+    (16) expression -> . expression DIVIDE expression
+    (17) expression -> . expression EXP expression
+    (18) expression -> . expression MOD expression
+    (19) expression -> . expression DIV expression
+    (20) expression -> . expression IN expression
+    (21) expression -> . expression CONC expression
+    (22) expression -> . expression LESS expression
+    (23) expression -> . expression MORE expression
+    (24) expression -> . expression EQUAL expression
+    (25) expression -> . expression NOTEQUAL expression
+    (26) expression -> . expression LESSE expression
+    (27) expression -> . expression MOREE expression
+    (28) expression -> . expression ANDALSO expression
+    (29) expression -> . expression ORELSE expression
+    (30) expression -> . NUMBER
+    (31) expression -> . STRING
+    (32) expression -> . BOOLEAN
+    (33) expression -> . expression SEMI
+    (8) list -> . LBRACKET series RBRACKET
+    (9) list -> . LBRACKET RBRACKET
+    (10) tuple -> . LPAREN series RPAREN
+    (11) tuple -> . LPAREN RPAREN
+
+    LPAREN          shift and go to state 2
+    POUND           shift and go to state 3
+    NOT             shift and go to state 7
+    NUMBER          shift and go to state 8
+    STRING          shift and go to state 9
+    BOOLEAN         shift and go to state 10
+    LBRACKET        shift and go to state 5
+
+    expression                     shift and go to state 50
+    tuple                          shift and go to state 4
+    list                           shift and go to state 6
+
+state 24
+
+    (25) expression -> expression NOTEQUAL . expression
+    (1) expression -> . LPAREN expression RPAREN
+    (2) expression -> . POUND expression tuple
+    (3) expression -> . expression LBRACKET expression RBRACKET
+    (4) expression -> . list
+    (5) expression -> . tuple
+    (12) expression -> . NOT expression
+    (13) expression -> . expression PLUS expression
+    (14) expression -> . expression MINUS expression
+    (15) expression -> . expression TIMES expression
+    (16) expression -> . expression DIVIDE expression
+    (17) expression -> . expression EXP expression
+    (18) expression -> . expression MOD expression
+    (19) expression -> . expression DIV expression
+    (20) expression -> . expression IN expression
+    (21) expression -> . expression CONC expression
+    (22) expression -> . expression LESS expression
+    (23) expression -> . expression MORE expression
+    (24) expression -> . expression EQUAL expression
+    (25) expression -> . expression NOTEQUAL expression
+    (26) expression -> . expression LESSE expression
+    (27) expression -> . expression MOREE expression
+    (28) expression -> . expression ANDALSO expression
+    (29) expression -> . expression ORELSE expression
+    (30) expression -> . NUMBER
+    (31) expression -> . STRING
+    (32) expression -> . BOOLEAN
+    (33) expression -> . expression SEMI
+    (8) list -> . LBRACKET series RBRACKET
+    (9) list -> . LBRACKET RBRACKET
+    (10) tuple -> . LPAREN series RPAREN
+    (11) tuple -> . LPAREN RPAREN
+
+    LPAREN          shift and go to state 2
+    POUND           shift and go to state 3
+    NOT             shift and go to state 7
+    NUMBER          shift and go to state 8
+    STRING          shift and go to state 9
+    BOOLEAN         shift and go to state 10
+    LBRACKET        shift and go to state 5
+
+    expression                     shift and go to state 51
+    tuple                          shift and go to state 4
+    list                           shift and go to state 6
+
+state 25
+
+    (26) expression -> expression LESSE . expression
+    (1) expression -> . LPAREN expression RPAREN
+    (2) expression -> . POUND expression tuple
+    (3) expression -> . expression LBRACKET expression RBRACKET
+    (4) expression -> . list
+    (5) expression -> . tuple
+    (12) expression -> . NOT expression
+    (13) expression -> . expression PLUS expression
+    (14) expression -> . expression MINUS expression
+    (15) expression -> . expression TIMES expression
+    (16) expression -> . expression DIVIDE expression
+    (17) expression -> . expression EXP expression
+    (18) expression -> . expression MOD expression
+    (19) expression -> . expression DIV expression
+    (20) expression -> . expression IN expression
+    (21) expression -> . expression CONC expression
+    (22) expression -> . expression LESS expression
+    (23) expression -> . expression MORE expression
+    (24) expression -> . expression EQUAL expression
+    (25) expression -> . expression NOTEQUAL expression
+    (26) expression -> . expression LESSE expression
+    (27) expression -> . expression MOREE expression
+    (28) expression -> . expression ANDALSO expression
+    (29) expression -> . expression ORELSE expression
+    (30) expression -> . NUMBER
+    (31) expression -> . STRING
+    (32) expression -> . BOOLEAN
+    (33) expression -> . expression SEMI
+    (8) list -> . LBRACKET series RBRACKET
+    (9) list -> . LBRACKET RBRACKET
+    (10) tuple -> . LPAREN series RPAREN
+    (11) tuple -> . LPAREN RPAREN
+
+    LPAREN          shift and go to state 2
+    POUND           shift and go to state 3
+    NOT             shift and go to state 7
+    NUMBER          shift and go to state 8
+    STRING          shift and go to state 9
+    BOOLEAN         shift and go to state 10
+    LBRACKET        shift and go to state 5
+
+    expression                     shift and go to state 52
+    tuple                          shift and go to state 4
+    list                           shift and go to state 6
+
+state 26
+
+    (27) expression -> expression MOREE . expression
+    (1) expression -> . LPAREN expression RPAREN
+    (2) expression -> . POUND expression tuple
+    (3) expression -> . expression LBRACKET expression RBRACKET
+    (4) expression -> . list
+    (5) expression -> . tuple
+    (12) expression -> . NOT expression
+    (13) expression -> . expression PLUS expression
+    (14) expression -> . expression MINUS expression
+    (15) expression -> . expression TIMES expression
+    (16) expression -> . expression DIVIDE expression
+    (17) expression -> . expression EXP expression
+    (18) expression -> . expression MOD expression
+    (19) expression -> . expression DIV expression
+    (20) expression -> . expression IN expression
+    (21) expression -> . expression CONC expression
+    (22) expression -> . expression LESS expression
+    (23) expression -> . expression MORE expression
+    (24) expression -> . expression EQUAL expression
+    (25) expression -> . expression NOTEQUAL expression
+    (26) expression -> . expression LESSE expression
+    (27) expression -> . expression MOREE expression
+    (28) expression -> . expression ANDALSO expression
+    (29) expression -> . expression ORELSE expression
+    (30) expression -> . NUMBER
+    (31) expression -> . STRING
+    (32) expression -> . BOOLEAN
+    (33) expression -> . expression SEMI
+    (8) list -> . LBRACKET series RBRACKET
+    (9) list -> . LBRACKET RBRACKET
+    (10) tuple -> . LPAREN series RPAREN
+    (11) tuple -> . LPAREN RPAREN
+
+    LPAREN          shift and go to state 2
+    POUND           shift and go to state 3
+    NOT             shift and go to state 7
+    NUMBER          shift and go to state 8
+    STRING          shift and go to state 9
+    BOOLEAN         shift and go to state 10
+    LBRACKET        shift and go to state 5
+
+    expression                     shift and go to state 53
+    tuple                          shift and go to state 4
+    list                           shift and go to state 6
+
+state 27
+
+    (28) expression -> expression ANDALSO . expression
+    (1) expression -> . LPAREN expression RPAREN
+    (2) expression -> . POUND expression tuple
+    (3) expression -> . expression LBRACKET expression RBRACKET
+    (4) expression -> . list
+    (5) expression -> . tuple
+    (12) expression -> . NOT expression
+    (13) expression -> . expression PLUS expression
+    (14) expression -> . expression MINUS expression
+    (15) expression -> . expression TIMES expression
+    (16) expression -> . expression DIVIDE expression
+    (17) expression -> . expression EXP expression
+    (18) expression -> . expression MOD expression
+    (19) expression -> . expression DIV expression
+    (20) expression -> . expression IN expression
+    (21) expression -> . expression CONC expression
+    (22) expression -> . expression LESS expression
+    (23) expression -> . expression MORE expression
+    (24) expression -> . expression EQUAL expression
+    (25) expression -> . expression NOTEQUAL expression
+    (26) expression -> . expression LESSE expression
+    (27) expression -> . expression MOREE expression
+    (28) expression -> . expression ANDALSO expression
+    (29) expression -> . expression ORELSE expression
+    (30) expression -> . NUMBER
+    (31) expression -> . STRING
+    (32) expression -> . BOOLEAN
+    (33) expression -> . expression SEMI
+    (8) list -> . LBRACKET series RBRACKET
+    (9) list -> . LBRACKET RBRACKET
+    (10) tuple -> . LPAREN series RPAREN
+    (11) tuple -> . LPAREN RPAREN
+
+    LPAREN          shift and go to state 2
+    POUND           shift and go to state 3
+    NOT             shift and go to state 7
+    NUMBER          shift and go to state 8
+    STRING          shift and go to state 9
+    BOOLEAN         shift and go to state 10
+    LBRACKET        shift and go to state 5
+
+    expression                     shift and go to state 54
+    tuple                          shift and go to state 4
+    list                           shift and go to state 6
+
+state 28
+
+    (29) expression -> expression ORELSE . expression
+    (1) expression -> . LPAREN expression RPAREN
+    (2) expression -> . POUND expression tuple
+    (3) expression -> . expression LBRACKET expression RBRACKET
+    (4) expression -> . list
+    (5) expression -> . tuple
+    (12) expression -> . NOT expression
+    (13) expression -> . expression PLUS expression
+    (14) expression -> . expression MINUS expression
+    (15) expression -> . expression TIMES expression
+    (16) expression -> . expression DIVIDE expression
+    (17) expression -> . expression EXP expression
+    (18) expression -> . expression MOD expression
+    (19) expression -> . expression DIV expression
+    (20) expression -> . expression IN expression
+    (21) expression -> . expression CONC expression
+    (22) expression -> . expression LESS expression
+    (23) expression -> . expression MORE expression
+    (24) expression -> . expression EQUAL expression
+    (25) expression -> . expression NOTEQUAL expression
+    (26) expression -> . expression LESSE expression
+    (27) expression -> . expression MOREE expression
+    (28) expression -> . expression ANDALSO expression
+    (29) expression -> . expression ORELSE expression
+    (30) expression -> . NUMBER
+    (31) expression -> . STRING
+    (32) expression -> . BOOLEAN
+    (33) expression -> . expression SEMI
+    (8) list -> . LBRACKET series RBRACKET
+    (9) list -> . LBRACKET RBRACKET
+    (10) tuple -> . LPAREN series RPAREN
+    (11) tuple -> . LPAREN RPAREN
+
+    LPAREN          shift and go to state 2
+    POUND           shift and go to state 3
+    NOT             shift and go to state 7
+    NUMBER          shift and go to state 8
+    STRING          shift and go to state 9
+    BOOLEAN         shift and go to state 10
+    LBRACKET        shift and go to state 5
+
+    expression                     shift and go to state 55
+    tuple                          shift and go to state 4
+    list                           shift and go to state 6
+
+state 29
+
+    (33) expression -> expression SEMI .
+
+    LBRACKET        reduce using rule 33 (expression -> expression SEMI .)
+    PLUS            reduce using rule 33 (expression -> expression SEMI .)
+    MINUS           reduce using rule 33 (expression -> expression SEMI .)
+    TIMES           reduce using rule 33 (expression -> expression SEMI .)
+    DIVIDE          reduce using rule 33 (expression -> expression SEMI .)
+    EXP             reduce using rule 33 (expression -> expression SEMI .)
+    MOD             reduce using rule 33 (expression -> expression SEMI .)
+    DIV             reduce using rule 33 (expression -> expression SEMI .)
+    IN              reduce using rule 33 (expression -> expression SEMI .)
+    CONC            reduce using rule 33 (expression -> expression SEMI .)
+    LESS            reduce using rule 33 (expression -> expression SEMI .)
+    MORE            reduce using rule 33 (expression -> expression SEMI .)
+    EQUAL           reduce using rule 33 (expression -> expression SEMI .)
+    NOTEQUAL        reduce using rule 33 (expression -> expression SEMI .)
+    LESSE           reduce using rule 33 (expression -> expression SEMI .)
+    MOREE           reduce using rule 33 (expression -> expression SEMI .)
+    ANDALSO         reduce using rule 33 (expression -> expression SEMI .)
+    ORELSE          reduce using rule 33 (expression -> expression SEMI .)
+    SEMI            reduce using rule 33 (expression -> expression SEMI .)
+    $end            reduce using rule 33 (expression -> expression SEMI .)
+    RPAREN          reduce using rule 33 (expression -> expression SEMI .)
+    COMMA           reduce using rule 33 (expression -> expression SEMI .)
+    LPAREN          reduce using rule 33 (expression -> expression SEMI .)
+    RBRACKET        reduce using rule 33 (expression -> expression SEMI .)
+
+
+state 30
+
+    (1) expression -> LPAREN expression . RPAREN
+    (3) expression -> expression . LBRACKET expression RBRACKET
+    (13) expression -> expression . PLUS expression
+    (14) expression -> expression . MINUS expression
+    (15) expression -> expression . TIMES expression
+    (16) expression -> expression . DIVIDE expression
+    (17) expression -> expression . EXP expression
+    (18) expression -> expression . MOD expression
+    (19) expression -> expression . DIV expression
+    (20) expression -> expression . IN expression
+    (21) expression -> expression . CONC expression
+    (22) expression -> expression . LESS expression
+    (23) expression -> expression . MORE expression
+    (24) expression -> expression . EQUAL expression
+    (25) expression -> expression . NOTEQUAL expression
+    (26) expression -> expression . LESSE expression
+    (27) expression -> expression . MOREE expression
+    (28) expression -> expression . ANDALSO expression
+    (29) expression -> expression . ORELSE expression
+    (33) expression -> expression . SEMI
+    (7) series -> expression .
+
+  ! shift/reduce conflict for RPAREN resolved as shift
+    RPAREN          shift and go to state 56
+    LBRACKET        shift and go to state 11
+    PLUS            shift and go to state 12
+    MINUS           shift and go to state 13
+    TIMES           shift and go to state 14
+    DIVIDE          shift and go to state 15
+    EXP             shift and go to state 16
+    MOD             shift and go to state 17
+    DIV             shift and go to state 18
+    IN              shift and go to state 19
+    CONC            shift and go to state 20
+    LESS            shift and go to state 21
+    MORE            shift and go to state 22
+    EQUAL           shift and go to state 23
+    NOTEQUAL        shift and go to state 24
+    LESSE           shift and go to state 25
+    MOREE           shift and go to state 26
+    ANDALSO         shift and go to state 27
+    ORELSE          shift and go to state 28
+    SEMI            shift and go to state 29
+    COMMA           reduce using rule 7 (series -> expression .)
+
+  ! RPAREN          [ reduce using rule 7 (series -> expression .) ]
+
+
+state 31
+
+    (11) tuple -> LPAREN RPAREN .
+
+    LBRACKET        reduce using rule 11 (tuple -> LPAREN RPAREN .)
+    PLUS            reduce using rule 11 (tuple -> LPAREN RPAREN .)
+    MINUS           reduce using rule 11 (tuple -> LPAREN RPAREN .)
+    TIMES           reduce using rule 11 (tuple -> LPAREN RPAREN .)
+    DIVIDE          reduce using rule 11 (tuple -> LPAREN RPAREN .)
+    EXP             reduce using rule 11 (tuple -> LPAREN RPAREN .)
+    MOD             reduce using rule 11 (tuple -> LPAREN RPAREN .)
+    DIV             reduce using rule 11 (tuple -> LPAREN RPAREN .)
+    IN              reduce using rule 11 (tuple -> LPAREN RPAREN .)
+    CONC            reduce using rule 11 (tuple -> LPAREN RPAREN .)
+    LESS            reduce using rule 11 (tuple -> LPAREN RPAREN .)
+    MORE            reduce using rule 11 (tuple -> LPAREN RPAREN .)
+    EQUAL           reduce using rule 11 (tuple -> LPAREN RPAREN .)
+    NOTEQUAL        reduce using rule 11 (tuple -> LPAREN RPAREN .)
+    LESSE           reduce using rule 11 (tuple -> LPAREN RPAREN .)
+    MOREE           reduce using rule 11 (tuple -> LPAREN RPAREN .)
+    ANDALSO         reduce using rule 11 (tuple -> LPAREN RPAREN .)
+    ORELSE          reduce using rule 11 (tuple -> LPAREN RPAREN .)
+    SEMI            reduce using rule 11 (tuple -> LPAREN RPAREN .)
+    $end            reduce using rule 11 (tuple -> LPAREN RPAREN .)
+    RPAREN          reduce using rule 11 (tuple -> LPAREN RPAREN .)
+    COMMA           reduce using rule 11 (tuple -> LPAREN RPAREN .)
+    LPAREN          reduce using rule 11 (tuple -> LPAREN RPAREN .)
+    RBRACKET        reduce using rule 11 (tuple -> LPAREN RPAREN .)
+
+
+state 32
+
+    (10) tuple -> LPAREN series . RPAREN
+    (6) series -> series . COMMA expression
+
+    RPAREN          shift and go to state 57
+    COMMA           shift and go to state 58
+
+
+state 33
+
+    (2) expression -> POUND expression . tuple
+    (3) expression -> expression . LBRACKET expression RBRACKET
+    (13) expression -> expression . PLUS expression
+    (14) expression -> expression . MINUS expression
+    (15) expression -> expression . TIMES expression
+    (16) expression -> expression . DIVIDE expression
+    (17) expression -> expression . EXP expression
+    (18) expression -> expression . MOD expression
+    (19) expression -> expression . DIV expression
+    (20) expression -> expression . IN expression
+    (21) expression -> expression . CONC expression
+    (22) expression -> expression . LESS expression
+    (23) expression -> expression . MORE expression
+    (24) expression -> expression . EQUAL expression
+    (25) expression -> expression . NOTEQUAL expression
+    (26) expression -> expression . LESSE expression
+    (27) expression -> expression . MOREE expression
+    (28) expression -> expression . ANDALSO expression
+    (29) expression -> expression . ORELSE expression
+    (33) expression -> expression . SEMI
+    (10) tuple -> . LPAREN series RPAREN
+    (11) tuple -> . LPAREN RPAREN
+
+    LBRACKET        shift and go to state 11
+    PLUS            shift and go to state 12
+    MINUS           shift and go to state 13
+    TIMES           shift and go to state 14
+    DIVIDE          shift and go to state 15
+    EXP             shift and go to state 16
+    MOD             shift and go to state 17
+    DIV             shift and go to state 18
+    IN              shift and go to state 19
+    CONC            shift and go to state 20
+    LESS            shift and go to state 21
+    MORE            shift and go to state 22
+    EQUAL           shift and go to state 23
+    NOTEQUAL        shift and go to state 24
+    LESSE           shift and go to state 25
+    MOREE           shift and go to state 26
+    ANDALSO         shift and go to state 27
+    ORELSE          shift and go to state 28
+    SEMI            shift and go to state 29
+    LPAREN          shift and go to state 60
+
+    tuple                          shift and go to state 59
+
+state 34
+
+    (8) list -> LBRACKET series . RBRACKET
+    (6) series -> series . COMMA expression
+
+    RBRACKET        shift and go to state 61
+    COMMA           shift and go to state 58
+
+
+state 35
+
+    (9) list -> LBRACKET RBRACKET .
+
+    LBRACKET        reduce using rule 9 (list -> LBRACKET RBRACKET .)
+    PLUS            reduce using rule 9 (list -> LBRACKET RBRACKET .)
+    MINUS           reduce using rule 9 (list -> LBRACKET RBRACKET .)
+    TIMES           reduce using rule 9 (list -> LBRACKET RBRACKET .)
+    DIVIDE          reduce using rule 9 (list -> LBRACKET RBRACKET .)
+    EXP             reduce using rule 9 (list -> LBRACKET RBRACKET .)
+    MOD             reduce using rule 9 (list -> LBRACKET RBRACKET .)
+    DIV             reduce using rule 9 (list -> LBRACKET RBRACKET .)
+    IN              reduce using rule 9 (list -> LBRACKET RBRACKET .)
+    CONC            reduce using rule 9 (list -> LBRACKET RBRACKET .)
+    LESS            reduce using rule 9 (list -> LBRACKET RBRACKET .)
+    MORE            reduce using rule 9 (list -> LBRACKET RBRACKET .)
+    EQUAL           reduce using rule 9 (list -> LBRACKET RBRACKET .)
+    NOTEQUAL        reduce using rule 9 (list -> LBRACKET RBRACKET .)
+    LESSE           reduce using rule 9 (list -> LBRACKET RBRACKET .)
+    MOREE           reduce using rule 9 (list -> LBRACKET RBRACKET .)
+    ANDALSO         reduce using rule 9 (list -> LBRACKET RBRACKET .)
+    ORELSE          reduce using rule 9 (list -> LBRACKET RBRACKET .)
+    SEMI            reduce using rule 9 (list -> LBRACKET RBRACKET .)
+    $end            reduce using rule 9 (list -> LBRACKET RBRACKET .)
+    RPAREN          reduce using rule 9 (list -> LBRACKET RBRACKET .)
+    COMMA           reduce using rule 9 (list -> LBRACKET RBRACKET .)
+    LPAREN          reduce using rule 9 (list -> LBRACKET RBRACKET .)
+    RBRACKET        reduce using rule 9 (list -> LBRACKET RBRACKET .)
+
+
+state 36
+
+    (7) series -> expression .
+    (3) expression -> expression . LBRACKET expression RBRACKET
+    (13) expression -> expression . PLUS expression
+    (14) expression -> expression . MINUS expression
+    (15) expression -> expression . TIMES expression
+    (16) expression -> expression . DIVIDE expression
+    (17) expression -> expression . EXP expression
+    (18) expression -> expression . MOD expression
+    (19) expression -> expression . DIV expression
+    (20) expression -> expression . IN expression
+    (21) expression -> expression . CONC expression
+    (22) expression -> expression . LESS expression
+    (23) expression -> expression . MORE expression
+    (24) expression -> expression . EQUAL expression
+    (25) expression -> expression . NOTEQUAL expression
+    (26) expression -> expression . LESSE expression
+    (27) expression -> expression . MOREE expression
+    (28) expression -> expression . ANDALSO expression
+    (29) expression -> expression . ORELSE expression
+    (33) expression -> expression . SEMI
+
+    RBRACKET        reduce using rule 7 (series -> expression .)
+    COMMA           reduce using rule 7 (series -> expression .)
+    RPAREN          reduce using rule 7 (series -> expression .)
+    LBRACKET        shift and go to state 11
+    PLUS            shift and go to state 12
+    MINUS           shift and go to state 13
+    TIMES           shift and go to state 14
+    DIVIDE          shift and go to state 15
+    EXP             shift and go to state 16
+    MOD             shift and go to state 17
+    DIV             shift and go to state 18
+    IN              shift and go to state 19
+    CONC            shift and go to state 20
+    LESS            shift and go to state 21
+    MORE            shift and go to state 22
+    EQUAL           shift and go to state 23
+    NOTEQUAL        shift and go to state 24
+    LESSE           shift and go to state 25
+    MOREE           shift and go to state 26
+    ANDALSO         shift and go to state 27
+    ORELSE          shift and go to state 28
+    SEMI            shift and go to state 29
+
+
+state 37
+
+    (12) expression -> NOT expression .
+    (3) expression -> expression . LBRACKET expression RBRACKET
+    (13) expression -> expression . PLUS expression
+    (14) expression -> expression . MINUS expression
+    (15) expression -> expression . TIMES expression
+    (16) expression -> expression . DIVIDE expression
+    (17) expression -> expression . EXP expression
+    (18) expression -> expression . MOD expression
+    (19) expression -> expression . DIV expression
+    (20) expression -> expression . IN expression
+    (21) expression -> expression . CONC expression
+    (22) expression -> expression . LESS expression
+    (23) expression -> expression . MORE expression
+    (24) expression -> expression . EQUAL expression
+    (25) expression -> expression . NOTEQUAL expression
+    (26) expression -> expression . LESSE expression
+    (27) expression -> expression . MOREE expression
+    (28) expression -> expression . ANDALSO expression
+    (29) expression -> expression . ORELSE expression
+    (33) expression -> expression . SEMI
+
+    LBRACKET        reduce using rule 12 (expression -> NOT expression .)
+    ANDALSO         reduce using rule 12 (expression -> NOT expression .)
+    ORELSE          reduce using rule 12 (expression -> NOT expression .)
+    SEMI            reduce using rule 12 (expression -> NOT expression .)
+    $end            reduce using rule 12 (expression -> NOT expression .)
+    RPAREN          reduce using rule 12 (expression -> NOT expression .)
+    COMMA           reduce using rule 12 (expression -> NOT expression .)
+    LPAREN          reduce using rule 12 (expression -> NOT expression .)
+    RBRACKET        reduce using rule 12 (expression -> NOT expression .)
+    PLUS            shift and go to state 12
+    MINUS           shift and go to state 13
+    TIMES           shift and go to state 14
+    DIVIDE          shift and go to state 15
+    EXP             shift and go to state 16
+    MOD             shift and go to state 17
+    DIV             shift and go to state 18
+    IN              shift and go to state 19
+    CONC            shift and go to state 20
+    LESS            shift and go to state 21
+    MORE            shift and go to state 22
+    EQUAL           shift and go to state 23
+    NOTEQUAL        shift and go to state 24
+    LESSE           shift and go to state 25
+    MOREE           shift and go to state 26
+
+  ! PLUS            [ reduce using rule 12 (expression -> NOT expression .) ]
+  ! MINUS           [ reduce using rule 12 (expression -> NOT expression .) ]
+  ! TIMES           [ reduce using rule 12 (expression -> NOT expression .) ]
+  ! DIVIDE          [ reduce using rule 12 (expression -> NOT expression .) ]
+  ! EXP             [ reduce using rule 12 (expression -> NOT expression .) ]
+  ! MOD             [ reduce using rule 12 (expression -> NOT expression .) ]
+  ! DIV             [ reduce using rule 12 (expression -> NOT expression .) ]
+  ! IN              [ reduce using rule 12 (expression -> NOT expression .) ]
+  ! CONC            [ reduce using rule 12 (expression -> NOT expression .) ]
+  ! LESS            [ reduce using rule 12 (expression -> NOT expression .) ]
+  ! MORE            [ reduce using rule 12 (expression -> NOT expression .) ]
+  ! EQUAL           [ reduce using rule 12 (expression -> NOT expression .) ]
+  ! NOTEQUAL        [ reduce using rule 12 (expression -> NOT expression .) ]
+  ! LESSE           [ reduce using rule 12 (expression -> NOT expression .) ]
+  ! MOREE           [ reduce using rule 12 (expression -> NOT expression .) ]
+  ! LBRACKET        [ shift and go to state 11 ]
+  ! ANDALSO         [ shift and go to state 27 ]
+  ! ORELSE          [ shift and go to state 28 ]
+  ! SEMI            [ shift and go to state 29 ]
+
+
+state 38
+
+    (3) expression -> expression LBRACKET expression . RBRACKET
+    (3) expression -> expression . LBRACKET expression RBRACKET
+    (13) expression -> expression . PLUS expression
+    (14) expression -> expression . MINUS expression
+    (15) expression -> expression . TIMES expression
+    (16) expression -> expression . DIVIDE expression
+    (17) expression -> expression . EXP expression
+    (18) expression -> expression . MOD expression
+    (19) expression -> expression . DIV expression
+    (20) expression -> expression . IN expression
+    (21) expression -> expression . CONC expression
+    (22) expression -> expression . LESS expression
+    (23) expression -> expression . MORE expression
+    (24) expression -> expression . EQUAL expression
+    (25) expression -> expression . NOTEQUAL expression
+    (26) expression -> expression . LESSE expression
+    (27) expression -> expression . MOREE expression
+    (28) expression -> expression . ANDALSO expression
+    (29) expression -> expression . ORELSE expression
+    (33) expression -> expression . SEMI
+
+    RBRACKET        shift and go to state 62
+    LBRACKET        shift and go to state 11
+    PLUS            shift and go to state 12
+    MINUS           shift and go to state 13
+    TIMES           shift and go to state 14
+    DIVIDE          shift and go to state 15
+    EXP             shift and go to state 16
+    MOD             shift and go to state 17
+    DIV             shift and go to state 18
+    IN              shift and go to state 19
+    CONC            shift and go to state 20
+    LESS            shift and go to state 21
+    MORE            shift and go to state 22
+    EQUAL           shift and go to state 23
+    NOTEQUAL        shift and go to state 24
+    LESSE           shift and go to state 25
+    MOREE           shift and go to state 26
+    ANDALSO         shift and go to state 27
+    ORELSE          shift and go to state 28
+    SEMI            shift and go to state 29
+
+
+state 39
+
+    (13) expression -> expression PLUS expression .
+    (3) expression -> expression . LBRACKET expression RBRACKET
+    (13) expression -> expression . PLUS expression
+    (14) expression -> expression . MINUS expression
+    (15) expression -> expression . TIMES expression
+    (16) expression -> expression . DIVIDE expression
+    (17) expression -> expression . EXP expression
+    (18) expression -> expression . MOD expression
+    (19) expression -> expression . DIV expression
+    (20) expression -> expression . IN expression
+    (21) expression -> expression . CONC expression
+    (22) expression -> expression . LESS expression
+    (23) expression -> expression . MORE expression
+    (24) expression -> expression . EQUAL expression
+    (25) expression -> expression . NOTEQUAL expression
+    (26) expression -> expression . LESSE expression
+    (27) expression -> expression . MOREE expression
+    (28) expression -> expression . ANDALSO expression
+    (29) expression -> expression . ORELSE expression
+    (33) expression -> expression . SEMI
+
+    LBRACKET        reduce using rule 13 (expression -> expression PLUS expression .)
+    PLUS            reduce using rule 13 (expression -> expression PLUS expression .)
+    MINUS           reduce using rule 13 (expression -> expression PLUS expression .)
+    IN              reduce using rule 13 (expression -> expression PLUS expression .)
+    CONC            reduce using rule 13 (expression -> expression PLUS expression .)
+    LESS            reduce using rule 13 (expression -> expression PLUS expression .)
+    MORE            reduce using rule 13 (expression -> expression PLUS expression .)
+    EQUAL           reduce using rule 13 (expression -> expression PLUS expression .)
+    NOTEQUAL        reduce using rule 13 (expression -> expression PLUS expression .)
+    LESSE           reduce using rule 13 (expression -> expression PLUS expression .)
+    MOREE           reduce using rule 13 (expression -> expression PLUS expression .)
+    ANDALSO         reduce using rule 13 (expression -> expression PLUS expression .)
+    ORELSE          reduce using rule 13 (expression -> expression PLUS expression .)
+    SEMI            reduce using rule 13 (expression -> expression PLUS expression .)
+    $end            reduce using rule 13 (expression -> expression PLUS expression .)
+    RPAREN          reduce using rule 13 (expression -> expression PLUS expression .)
+    COMMA           reduce using rule 13 (expression -> expression PLUS expression .)
+    LPAREN          reduce using rule 13 (expression -> expression PLUS expression .)
+    RBRACKET        reduce using rule 13 (expression -> expression PLUS expression .)
+    TIMES           shift and go to state 14
+    DIVIDE          shift and go to state 15
+    EXP             shift and go to state 16
+    MOD             shift and go to state 17
+    DIV             shift and go to state 18
+
+  ! TIMES           [ reduce using rule 13 (expression -> expression PLUS expression .) ]
+  ! DIVIDE          [ reduce using rule 13 (expression -> expression PLUS expression .) ]
+  ! EXP             [ reduce using rule 13 (expression -> expression PLUS expression .) ]
+  ! MOD             [ reduce using rule 13 (expression -> expression PLUS expression .) ]
+  ! DIV             [ reduce using rule 13 (expression -> expression PLUS expression .) ]
+  ! LBRACKET        [ shift and go to state 11 ]
+  ! PLUS            [ shift and go to state 12 ]
+  ! MINUS           [ shift and go to state 13 ]
+  ! IN              [ shift and go to state 19 ]
+  ! CONC            [ shift and go to state 20 ]
+  ! LESS            [ shift and go to state 21 ]
+  ! MORE            [ shift and go to state 22 ]
+  ! EQUAL           [ shift and go to state 23 ]
+  ! NOTEQUAL        [ shift and go to state 24 ]
+  ! LESSE           [ shift and go to state 25 ]
+  ! MOREE           [ shift and go to state 26 ]
+  ! ANDALSO         [ shift and go to state 27 ]
+  ! ORELSE          [ shift and go to state 28 ]
+  ! SEMI            [ shift and go to state 29 ]
+
+
+state 40
+
+    (14) expression -> expression MINUS expression .
+    (3) expression -> expression . LBRACKET expression RBRACKET
+    (13) expression -> expression . PLUS expression
+    (14) expression -> expression . MINUS expression
+    (15) expression -> expression . TIMES expression
+    (16) expression -> expression . DIVIDE expression
+    (17) expression -> expression . EXP expression
+    (18) expression -> expression . MOD expression
+    (19) expression -> expression . DIV expression
+    (20) expression -> expression . IN expression
+    (21) expression -> expression . CONC expression
+    (22) expression -> expression . LESS expression
+    (23) expression -> expression . MORE expression
+    (24) expression -> expression . EQUAL expression
+    (25) expression -> expression . NOTEQUAL expression
+    (26) expression -> expression . LESSE expression
+    (27) expression -> expression . MOREE expression
+    (28) expression -> expression . ANDALSO expression
+    (29) expression -> expression . ORELSE expression
+    (33) expression -> expression . SEMI
+
+    LBRACKET        reduce using rule 14 (expression -> expression MINUS expression .)
+    PLUS            reduce using rule 14 (expression -> expression MINUS expression .)
+    MINUS           reduce using rule 14 (expression -> expression MINUS expression .)
+    IN              reduce using rule 14 (expression -> expression MINUS expression .)
+    CONC            reduce using rule 14 (expression -> expression MINUS expression .)
+    LESS            reduce using rule 14 (expression -> expression MINUS expression .)
+    MORE            reduce using rule 14 (expression -> expression MINUS expression .)
+    EQUAL           reduce using rule 14 (expression -> expression MINUS expression .)
+    NOTEQUAL        reduce using rule 14 (expression -> expression MINUS expression .)
+    LESSE           reduce using rule 14 (expression -> expression MINUS expression .)
+    MOREE           reduce using rule 14 (expression -> expression MINUS expression .)
+    ANDALSO         reduce using rule 14 (expression -> expression MINUS expression .)
+    ORELSE          reduce using rule 14 (expression -> expression MINUS expression .)
+    SEMI            reduce using rule 14 (expression -> expression MINUS expression .)
+    $end            reduce using rule 14 (expression -> expression MINUS expression .)
+    RPAREN          reduce using rule 14 (expression -> expression MINUS expression .)
+    COMMA           reduce using rule 14 (expression -> expression MINUS expression .)
+    LPAREN          reduce using rule 14 (expression -> expression MINUS expression .)
+    RBRACKET        reduce using rule 14 (expression -> expression MINUS expression .)
+    TIMES           shift and go to state 14
+    DIVIDE          shift and go to state 15
+    EXP             shift and go to state 16
+    MOD             shift and go to state 17
+    DIV             shift and go to state 18
+
+  ! TIMES           [ reduce using rule 14 (expression -> expression MINUS expression .) ]
+  ! DIVIDE          [ reduce using rule 14 (expression -> expression MINUS expression .) ]
+  ! EXP             [ reduce using rule 14 (expression -> expression MINUS expression .) ]
+  ! MOD             [ reduce using rule 14 (expression -> expression MINUS expression .) ]
+  ! DIV             [ reduce using rule 14 (expression -> expression MINUS expression .) ]
+  ! LBRACKET        [ shift and go to state 11 ]
+  ! PLUS            [ shift and go to state 12 ]
+  ! MINUS           [ shift and go to state 13 ]
+  ! IN              [ shift and go to state 19 ]
+  ! CONC            [ shift and go to state 20 ]
+  ! LESS            [ shift and go to state 21 ]
+  ! MORE            [ shift and go to state 22 ]
+  ! EQUAL           [ shift and go to state 23 ]
+  ! NOTEQUAL        [ shift and go to state 24 ]
+  ! LESSE           [ shift and go to state 25 ]
+  ! MOREE           [ shift and go to state 26 ]
+  ! ANDALSO         [ shift and go to state 27 ]
+  ! ORELSE          [ shift and go to state 28 ]
+  ! SEMI            [ shift and go to state 29 ]
+
+
+state 41
+
+    (15) expression -> expression TIMES expression .
+    (3) expression -> expression . LBRACKET expression RBRACKET
+    (13) expression -> expression . PLUS expression
+    (14) expression -> expression . MINUS expression
+    (15) expression -> expression . TIMES expression
+    (16) expression -> expression . DIVIDE expression
+    (17) expression -> expression . EXP expression
+    (18) expression -> expression . MOD expression
+    (19) expression -> expression . DIV expression
+    (20) expression -> expression . IN expression
+    (21) expression -> expression . CONC expression
+    (22) expression -> expression . LESS expression
+    (23) expression -> expression . MORE expression
+    (24) expression -> expression . EQUAL expression
+    (25) expression -> expression . NOTEQUAL expression
+    (26) expression -> expression . LESSE expression
+    (27) expression -> expression . MOREE expression
+    (28) expression -> expression . ANDALSO expression
+    (29) expression -> expression . ORELSE expression
+    (33) expression -> expression . SEMI
+
+    LBRACKET        reduce using rule 15 (expression -> expression TIMES expression .)
+    PLUS            reduce using rule 15 (expression -> expression TIMES expression .)
+    MINUS           reduce using rule 15 (expression -> expression TIMES expression .)
+    TIMES           reduce using rule 15 (expression -> expression TIMES expression .)
+    DIVIDE          reduce using rule 15 (expression -> expression TIMES expression .)
+    MOD             reduce using rule 15 (expression -> expression TIMES expression .)
+    DIV             reduce using rule 15 (expression -> expression TIMES expression .)
+    IN              reduce using rule 15 (expression -> expression TIMES expression .)
+    CONC            reduce using rule 15 (expression -> expression TIMES expression .)
+    LESS            reduce using rule 15 (expression -> expression TIMES expression .)
+    MORE            reduce using rule 15 (expression -> expression TIMES expression .)
+    EQUAL           reduce using rule 15 (expression -> expression TIMES expression .)
+    NOTEQUAL        reduce using rule 15 (expression -> expression TIMES expression .)
+    LESSE           reduce using rule 15 (expression -> expression TIMES expression .)
+    MOREE           reduce using rule 15 (expression -> expression TIMES expression .)
+    ANDALSO         reduce using rule 15 (expression -> expression TIMES expression .)
+    ORELSE          reduce using rule 15 (expression -> expression TIMES expression .)
+    SEMI            reduce using rule 15 (expression -> expression TIMES expression .)
+    $end            reduce using rule 15 (expression -> expression TIMES expression .)
+    RPAREN          reduce using rule 15 (expression -> expression TIMES expression .)
+    COMMA           reduce using rule 15 (expression -> expression TIMES expression .)
+    LPAREN          reduce using rule 15 (expression -> expression TIMES expression .)
+    RBRACKET        reduce using rule 15 (expression -> expression TIMES expression .)
+    EXP             shift and go to state 16
+
+  ! EXP             [ reduce using rule 15 (expression -> expression TIMES expression .) ]
+  ! LBRACKET        [ shift and go to state 11 ]
+  ! PLUS            [ shift and go to state 12 ]
+  ! MINUS           [ shift and go to state 13 ]
+  ! TIMES           [ shift and go to state 14 ]
+  ! DIVIDE          [ shift and go to state 15 ]
+  ! MOD             [ shift and go to state 17 ]
+  ! DIV             [ shift and go to state 18 ]
+  ! IN              [ shift and go to state 19 ]
+  ! CONC            [ shift and go to state 20 ]
+  ! LESS            [ shift and go to state 21 ]
+  ! MORE            [ shift and go to state 22 ]
+  ! EQUAL           [ shift and go to state 23 ]
+  ! NOTEQUAL        [ shift and go to state 24 ]
+  ! LESSE           [ shift and go to state 25 ]
+  ! MOREE           [ shift and go to state 26 ]
+  ! ANDALSO         [ shift and go to state 27 ]
+  ! ORELSE          [ shift and go to state 28 ]
+  ! SEMI            [ shift and go to state 29 ]
+
+
+state 42
+
+    (16) expression -> expression DIVIDE expression .
+    (3) expression -> expression . LBRACKET expression RBRACKET
+    (13) expression -> expression . PLUS expression
+    (14) expression -> expression . MINUS expression
+    (15) expression -> expression . TIMES expression
+    (16) expression -> expression . DIVIDE expression
+    (17) expression -> expression . EXP expression
+    (18) expression -> expression . MOD expression
+    (19) expression -> expression . DIV expression
+    (20) expression -> expression . IN expression
+    (21) expression -> expression . CONC expression
+    (22) expression -> expression . LESS expression
+    (23) expression -> expression . MORE expression
+    (24) expression -> expression . EQUAL expression
+    (25) expression -> expression . NOTEQUAL expression
+    (26) expression -> expression . LESSE expression
+    (27) expression -> expression . MOREE expression
+    (28) expression -> expression . ANDALSO expression
+    (29) expression -> expression . ORELSE expression
+    (33) expression -> expression . SEMI
+
+    LBRACKET        reduce using rule 16 (expression -> expression DIVIDE expression .)
+    PLUS            reduce using rule 16 (expression -> expression DIVIDE expression .)
+    MINUS           reduce using rule 16 (expression -> expression DIVIDE expression .)
+    TIMES           reduce using rule 16 (expression -> expression DIVIDE expression .)
+    DIVIDE          reduce using rule 16 (expression -> expression DIVIDE expression .)
+    MOD             reduce using rule 16 (expression -> expression DIVIDE expression .)
+    DIV             reduce using rule 16 (expression -> expression DIVIDE expression .)
+    IN              reduce using rule 16 (expression -> expression DIVIDE expression .)
+    CONC            reduce using rule 16 (expression -> expression DIVIDE expression .)
+    LESS            reduce using rule 16 (expression -> expression DIVIDE expression .)
+    MORE            reduce using rule 16 (expression -> expression DIVIDE expression .)
+    EQUAL           reduce using rule 16 (expression -> expression DIVIDE expression .)
+    NOTEQUAL        reduce using rule 16 (expression -> expression DIVIDE expression .)
+    LESSE           reduce using rule 16 (expression -> expression DIVIDE expression .)
+    MOREE           reduce using rule 16 (expression -> expression DIVIDE expression .)
+    ANDALSO         reduce using rule 16 (expression -> expression DIVIDE expression .)
+    ORELSE          reduce using rule 16 (expression -> expression DIVIDE expression .)
+    SEMI            reduce using rule 16 (expression -> expression DIVIDE expression .)
+    $end            reduce using rule 16 (expression -> expression DIVIDE expression .)
+    RPAREN          reduce using rule 16 (expression -> expression DIVIDE expression .)
+    COMMA           reduce using rule 16 (expression -> expression DIVIDE expression .)
+    LPAREN          reduce using rule 16 (expression -> expression DIVIDE expression .)
+    RBRACKET        reduce using rule 16 (expression -> expression DIVIDE expression .)
+    EXP             shift and go to state 16
+
+  ! EXP             [ reduce using rule 16 (expression -> expression DIVIDE expression .) ]
+  ! LBRACKET        [ shift and go to state 11 ]
+  ! PLUS            [ shift and go to state 12 ]
+  ! MINUS           [ shift and go to state 13 ]
+  ! TIMES           [ shift and go to state 14 ]
+  ! DIVIDE          [ shift and go to state 15 ]
+  ! MOD             [ shift and go to state 17 ]
+  ! DIV             [ shift and go to state 18 ]
+  ! IN              [ shift and go to state 19 ]
+  ! CONC            [ shift and go to state 20 ]
+  ! LESS            [ shift and go to state 21 ]
+  ! MORE            [ shift and go to state 22 ]
+  ! EQUAL           [ shift and go to state 23 ]
+  ! NOTEQUAL        [ shift and go to state 24 ]
+  ! LESSE           [ shift and go to state 25 ]
+  ! MOREE           [ shift and go to state 26 ]
+  ! ANDALSO         [ shift and go to state 27 ]
+  ! ORELSE          [ shift and go to state 28 ]
+  ! SEMI            [ shift and go to state 29 ]
+
+
+state 43
+
+    (17) expression -> expression EXP expression .
+    (3) expression -> expression . LBRACKET expression RBRACKET
+    (13) expression -> expression . PLUS expression
+    (14) expression -> expression . MINUS expression
+    (15) expression -> expression . TIMES expression
+    (16) expression -> expression . DIVIDE expression
+    (17) expression -> expression . EXP expression
+    (18) expression -> expression . MOD expression
+    (19) expression -> expression . DIV expression
+    (20) expression -> expression . IN expression
+    (21) expression -> expression . CONC expression
+    (22) expression -> expression . LESS expression
+    (23) expression -> expression . MORE expression
+    (24) expression -> expression . EQUAL expression
+    (25) expression -> expression . NOTEQUAL expression
+    (26) expression -> expression . LESSE expression
+    (27) expression -> expression . MOREE expression
+    (28) expression -> expression . ANDALSO expression
+    (29) expression -> expression . ORELSE expression
+    (33) expression -> expression . SEMI
+
+    LBRACKET        reduce using rule 17 (expression -> expression EXP expression .)
+    PLUS            reduce using rule 17 (expression -> expression EXP expression .)
+    MINUS           reduce using rule 17 (expression -> expression EXP expression .)
+    TIMES           reduce using rule 17 (expression -> expression EXP expression .)
+    DIVIDE          reduce using rule 17 (expression -> expression EXP expression .)
+    EXP             reduce using rule 17 (expression -> expression EXP expression .)
+    MOD             reduce using rule 17 (expression -> expression EXP expression .)
+    DIV             reduce using rule 17 (expression -> expression EXP expression .)
+    IN              reduce using rule 17 (expression -> expression EXP expression .)
+    CONC            reduce using rule 17 (expression -> expression EXP expression .)
+    LESS            reduce using rule 17 (expression -> expression EXP expression .)
+    MORE            reduce using rule 17 (expression -> expression EXP expression .)
+    EQUAL           reduce using rule 17 (expression -> expression EXP expression .)
+    NOTEQUAL        reduce using rule 17 (expression -> expression EXP expression .)
+    LESSE           reduce using rule 17 (expression -> expression EXP expression .)
+    MOREE           reduce using rule 17 (expression -> expression EXP expression .)
+    ANDALSO         reduce using rule 17 (expression -> expression EXP expression .)
+    ORELSE          reduce using rule 17 (expression -> expression EXP expression .)
+    SEMI            reduce using rule 17 (expression -> expression EXP expression .)
+    $end            reduce using rule 17 (expression -> expression EXP expression .)
+    RPAREN          reduce using rule 17 (expression -> expression EXP expression .)
+    COMMA           reduce using rule 17 (expression -> expression EXP expression .)
+    LPAREN          reduce using rule 17 (expression -> expression EXP expression .)
+    RBRACKET        reduce using rule 17 (expression -> expression EXP expression .)
+
+  ! LBRACKET        [ shift and go to state 11 ]
+  ! PLUS            [ shift and go to state 12 ]
+  ! MINUS           [ shift and go to state 13 ]
+  ! TIMES           [ shift and go to state 14 ]
+  ! DIVIDE          [ shift and go to state 15 ]
+  ! EXP             [ shift and go to state 16 ]
+  ! MOD             [ shift and go to state 17 ]
+  ! DIV             [ shift and go to state 18 ]
+  ! IN              [ shift and go to state 19 ]
+  ! CONC            [ shift and go to state 20 ]
+  ! LESS            [ shift and go to state 21 ]
+  ! MORE            [ shift and go to state 22 ]
+  ! EQUAL           [ shift and go to state 23 ]
+  ! NOTEQUAL        [ shift and go to state 24 ]
+  ! LESSE           [ shift and go to state 25 ]
+  ! MOREE           [ shift and go to state 26 ]
+  ! ANDALSO         [ shift and go to state 27 ]
+  ! ORELSE          [ shift and go to state 28 ]
+  ! SEMI            [ shift and go to state 29 ]
+
+
+state 44
+
+    (18) expression -> expression MOD expression .
+    (3) expression -> expression . LBRACKET expression RBRACKET
+    (13) expression -> expression . PLUS expression
+    (14) expression -> expression . MINUS expression
+    (15) expression -> expression . TIMES expression
+    (16) expression -> expression . DIVIDE expression
+    (17) expression -> expression . EXP expression
+    (18) expression -> expression . MOD expression
+    (19) expression -> expression . DIV expression
+    (20) expression -> expression . IN expression
+    (21) expression -> expression . CONC expression
+    (22) expression -> expression . LESS expression
+    (23) expression -> expression . MORE expression
+    (24) expression -> expression . EQUAL expression
+    (25) expression -> expression . NOTEQUAL expression
+    (26) expression -> expression . LESSE expression
+    (27) expression -> expression . MOREE expression
+    (28) expression -> expression . ANDALSO expression
+    (29) expression -> expression . ORELSE expression
+    (33) expression -> expression . SEMI
+
+    LBRACKET        reduce using rule 18 (expression -> expression MOD expression .)
+    PLUS            reduce using rule 18 (expression -> expression MOD expression .)
+    MINUS           reduce using rule 18 (expression -> expression MOD expression .)
+    TIMES           reduce using rule 18 (expression -> expression MOD expression .)
+    DIVIDE          reduce using rule 18 (expression -> expression MOD expression .)
+    MOD             reduce using rule 18 (expression -> expression MOD expression .)
+    DIV             reduce using rule 18 (expression -> expression MOD expression .)
+    IN              reduce using rule 18 (expression -> expression MOD expression .)
+    CONC            reduce using rule 18 (expression -> expression MOD expression .)
+    LESS            reduce using rule 18 (expression -> expression MOD expression .)
+    MORE            reduce using rule 18 (expression -> expression MOD expression .)
+    EQUAL           reduce using rule 18 (expression -> expression MOD expression .)
+    NOTEQUAL        reduce using rule 18 (expression -> expression MOD expression .)
+    LESSE           reduce using rule 18 (expression -> expression MOD expression .)
+    MOREE           reduce using rule 18 (expression -> expression MOD expression .)
+    ANDALSO         reduce using rule 18 (expression -> expression MOD expression .)
+    ORELSE          reduce using rule 18 (expression -> expression MOD expression .)
+    SEMI            reduce using rule 18 (expression -> expression MOD expression .)
+    $end            reduce using rule 18 (expression -> expression MOD expression .)
+    RPAREN          reduce using rule 18 (expression -> expression MOD expression .)
+    COMMA           reduce using rule 18 (expression -> expression MOD expression .)
+    LPAREN          reduce using rule 18 (expression -> expression MOD expression .)
+    RBRACKET        reduce using rule 18 (expression -> expression MOD expression .)
+    EXP             shift and go to state 16
+
+  ! EXP             [ reduce using rule 18 (expression -> expression MOD expression .) ]
+  ! LBRACKET        [ shift and go to state 11 ]
+  ! PLUS            [ shift and go to state 12 ]
+  ! MINUS           [ shift and go to state 13 ]
+  ! TIMES           [ shift and go to state 14 ]
+  ! DIVIDE          [ shift and go to state 15 ]
+  ! MOD             [ shift and go to state 17 ]
+  ! DIV             [ shift and go to state 18 ]
+  ! IN              [ shift and go to state 19 ]
+  ! CONC            [ shift and go to state 20 ]
+  ! LESS            [ shift and go to state 21 ]
+  ! MORE            [ shift and go to state 22 ]
+  ! EQUAL           [ shift and go to state 23 ]
+  ! NOTEQUAL        [ shift and go to state 24 ]
+  ! LESSE           [ shift and go to state 25 ]
+  ! MOREE           [ shift and go to state 26 ]
+  ! ANDALSO         [ shift and go to state 27 ]
+  ! ORELSE          [ shift and go to state 28 ]
+  ! SEMI            [ shift and go to state 29 ]
+
+
+state 45
+
+    (19) expression -> expression DIV expression .
+    (3) expression -> expression . LBRACKET expression RBRACKET
+    (13) expression -> expression . PLUS expression
+    (14) expression -> expression . MINUS expression
+    (15) expression -> expression . TIMES expression
+    (16) expression -> expression . DIVIDE expression
+    (17) expression -> expression . EXP expression
+    (18) expression -> expression . MOD expression
+    (19) expression -> expression . DIV expression
+    (20) expression -> expression . IN expression
+    (21) expression -> expression . CONC expression
+    (22) expression -> expression . LESS expression
+    (23) expression -> expression . MORE expression
+    (24) expression -> expression . EQUAL expression
+    (25) expression -> expression . NOTEQUAL expression
+    (26) expression -> expression . LESSE expression
+    (27) expression -> expression . MOREE expression
+    (28) expression -> expression . ANDALSO expression
+    (29) expression -> expression . ORELSE expression
+    (33) expression -> expression . SEMI
+
+    LBRACKET        reduce using rule 19 (expression -> expression DIV expression .)
+    PLUS            reduce using rule 19 (expression -> expression DIV expression .)
+    MINUS           reduce using rule 19 (expression -> expression DIV expression .)
+    TIMES           reduce using rule 19 (expression -> expression DIV expression .)
+    DIVIDE          reduce using rule 19 (expression -> expression DIV expression .)
+    MOD             reduce using rule 19 (expression -> expression DIV expression .)
+    DIV             reduce using rule 19 (expression -> expression DIV expression .)
+    IN              reduce using rule 19 (expression -> expression DIV expression .)
+    CONC            reduce using rule 19 (expression -> expression DIV expression .)
+    LESS            reduce using rule 19 (expression -> expression DIV expression .)
+    MORE            reduce using rule 19 (expression -> expression DIV expression .)
+    EQUAL           reduce using rule 19 (expression -> expression DIV expression .)
+    NOTEQUAL        reduce using rule 19 (expression -> expression DIV expression .)
+    LESSE           reduce using rule 19 (expression -> expression DIV expression .)
+    MOREE           reduce using rule 19 (expression -> expression DIV expression .)
+    ANDALSO         reduce using rule 19 (expression -> expression DIV expression .)
+    ORELSE          reduce using rule 19 (expression -> expression DIV expression .)
+    SEMI            reduce using rule 19 (expression -> expression DIV expression .)
+    $end            reduce using rule 19 (expression -> expression DIV expression .)
+    RPAREN          reduce using rule 19 (expression -> expression DIV expression .)
+    COMMA           reduce using rule 19 (expression -> expression DIV expression .)
+    LPAREN          reduce using rule 19 (expression -> expression DIV expression .)
+    RBRACKET        reduce using rule 19 (expression -> expression DIV expression .)
+    EXP             shift and go to state 16
+
+  ! EXP             [ reduce using rule 19 (expression -> expression DIV expression .) ]
+  ! LBRACKET        [ shift and go to state 11 ]
+  ! PLUS            [ shift and go to state 12 ]
+  ! MINUS           [ shift and go to state 13 ]
+  ! TIMES           [ shift and go to state 14 ]
+  ! DIVIDE          [ shift and go to state 15 ]
+  ! MOD             [ shift and go to state 17 ]
+  ! DIV             [ shift and go to state 18 ]
+  ! IN              [ shift and go to state 19 ]
+  ! CONC            [ shift and go to state 20 ]
+  ! LESS            [ shift and go to state 21 ]
+  ! MORE            [ shift and go to state 22 ]
+  ! EQUAL           [ shift and go to state 23 ]
+  ! NOTEQUAL        [ shift and go to state 24 ]
+  ! LESSE           [ shift and go to state 25 ]
+  ! MOREE           [ shift and go to state 26 ]
+  ! ANDALSO         [ shift and go to state 27 ]
+  ! ORELSE          [ shift and go to state 28 ]
+  ! SEMI            [ shift and go to state 29 ]
+
+
+state 46
+
+    (20) expression -> expression IN expression .
+    (3) expression -> expression . LBRACKET expression RBRACKET
+    (13) expression -> expression . PLUS expression
+    (14) expression -> expression . MINUS expression
+    (15) expression -> expression . TIMES expression
+    (16) expression -> expression . DIVIDE expression
+    (17) expression -> expression . EXP expression
+    (18) expression -> expression . MOD expression
+    (19) expression -> expression . DIV expression
+    (20) expression -> expression . IN expression
+    (21) expression -> expression . CONC expression
+    (22) expression -> expression . LESS expression
+    (23) expression -> expression . MORE expression
+    (24) expression -> expression . EQUAL expression
+    (25) expression -> expression . NOTEQUAL expression
+    (26) expression -> expression . LESSE expression
+    (27) expression -> expression . MOREE expression
+    (28) expression -> expression . ANDALSO expression
+    (29) expression -> expression . ORELSE expression
+    (33) expression -> expression . SEMI
+
+    LBRACKET        reduce using rule 20 (expression -> expression IN expression .)
+    IN              reduce using rule 20 (expression -> expression IN expression .)
+    CONC            reduce using rule 20 (expression -> expression IN expression .)
+    LESS            reduce using rule 20 (expression -> expression IN expression .)
+    MORE            reduce using rule 20 (expression -> expression IN expression .)
+    EQUAL           reduce using rule 20 (expression -> expression IN expression .)
+    NOTEQUAL        reduce using rule 20 (expression -> expression IN expression .)
+    LESSE           reduce using rule 20 (expression -> expression IN expression .)
+    MOREE           reduce using rule 20 (expression -> expression IN expression .)
+    ANDALSO         reduce using rule 20 (expression -> expression IN expression .)
+    ORELSE          reduce using rule 20 (expression -> expression IN expression .)
+    SEMI            reduce using rule 20 (expression -> expression IN expression .)
+    $end            reduce using rule 20 (expression -> expression IN expression .)
+    RPAREN          reduce using rule 20 (expression -> expression IN expression .)
+    COMMA           reduce using rule 20 (expression -> expression IN expression .)
+    LPAREN          reduce using rule 20 (expression -> expression IN expression .)
+    RBRACKET        reduce using rule 20 (expression -> expression IN expression .)
+    PLUS            shift and go to state 12
+    MINUS           shift and go to state 13
+    TIMES           shift and go to state 14
+    DIVIDE          shift and go to state 15
+    EXP             shift and go to state 16
+    MOD             shift and go to state 17
+    DIV             shift and go to state 18
+
+  ! PLUS            [ reduce using rule 20 (expression -> expression IN expression .) ]
+  ! MINUS           [ reduce using rule 20 (expression -> expression IN expression .) ]
+  ! TIMES           [ reduce using rule 20 (expression -> expression IN expression .) ]
+  ! DIVIDE          [ reduce using rule 20 (expression -> expression IN expression .) ]
+  ! EXP             [ reduce using rule 20 (expression -> expression IN expression .) ]
+  ! MOD             [ reduce using rule 20 (expression -> expression IN expression .) ]
+  ! DIV             [ reduce using rule 20 (expression -> expression IN expression .) ]
+  ! LBRACKET        [ shift and go to state 11 ]
+  ! IN              [ shift and go to state 19 ]
+  ! CONC            [ shift and go to state 20 ]
+  ! LESS            [ shift and go to state 21 ]
+  ! MORE            [ shift and go to state 22 ]
+  ! EQUAL           [ shift and go to state 23 ]
+  ! NOTEQUAL        [ shift and go to state 24 ]
+  ! LESSE           [ shift and go to state 25 ]
+  ! MOREE           [ shift and go to state 26 ]
+  ! ANDALSO         [ shift and go to state 27 ]
+  ! ORELSE          [ shift and go to state 28 ]
+  ! SEMI            [ shift and go to state 29 ]
+
+
+state 47
+
+    (21) expression -> expression CONC expression .
+    (3) expression -> expression . LBRACKET expression RBRACKET
+    (13) expression -> expression . PLUS expression
+    (14) expression -> expression . MINUS expression
+    (15) expression -> expression . TIMES expression
+    (16) expression -> expression . DIVIDE expression
+    (17) expression -> expression . EXP expression
+    (18) expression -> expression . MOD expression
+    (19) expression -> expression . DIV expression
+    (20) expression -> expression . IN expression
+    (21) expression -> expression . CONC expression
+    (22) expression -> expression . LESS expression
+    (23) expression -> expression . MORE expression
+    (24) expression -> expression . EQUAL expression
+    (25) expression -> expression . NOTEQUAL expression
+    (26) expression -> expression . LESSE expression
+    (27) expression -> expression . MOREE expression
+    (28) expression -> expression . ANDALSO expression
+    (29) expression -> expression . ORELSE expression
+    (33) expression -> expression . SEMI
+
+    LBRACKET        reduce using rule 21 (expression -> expression CONC expression .)
+    CONC            reduce using rule 21 (expression -> expression CONC expression .)
+    LESS            reduce using rule 21 (expression -> expression CONC expression .)
+    MORE            reduce using rule 21 (expression -> expression CONC expression .)
+    EQUAL           reduce using rule 21 (expression -> expression CONC expression .)
+    NOTEQUAL        reduce using rule 21 (expression -> expression CONC expression .)
+    LESSE           reduce using rule 21 (expression -> expression CONC expression .)
+    MOREE           reduce using rule 21 (expression -> expression CONC expression .)
+    ANDALSO         reduce using rule 21 (expression -> expression CONC expression .)
+    ORELSE          reduce using rule 21 (expression -> expression CONC expression .)
+    SEMI            reduce using rule 21 (expression -> expression CONC expression .)
+    $end            reduce using rule 21 (expression -> expression CONC expression .)
+    RPAREN          reduce using rule 21 (expression -> expression CONC expression .)
+    COMMA           reduce using rule 21 (expression -> expression CONC expression .)
+    LPAREN          reduce using rule 21 (expression -> expression CONC expression .)
+    RBRACKET        reduce using rule 21 (expression -> expression CONC expression .)
+    PLUS            shift and go to state 12
+    MINUS           shift and go to state 13
+    TIMES           shift and go to state 14
+    DIVIDE          shift and go to state 15
+    EXP             shift and go to state 16
+    MOD             shift and go to state 17
+    DIV             shift and go to state 18
+    IN              shift and go to state 19
+
+  ! PLUS            [ reduce using rule 21 (expression -> expression CONC expression .) ]
+  ! MINUS           [ reduce using rule 21 (expression -> expression CONC expression .) ]
+  ! TIMES           [ reduce using rule 21 (expression -> expression CONC expression .) ]
+  ! DIVIDE          [ reduce using rule 21 (expression -> expression CONC expression .) ]
+  ! EXP             [ reduce using rule 21 (expression -> expression CONC expression .) ]
+  ! MOD             [ reduce using rule 21 (expression -> expression CONC expression .) ]
+  ! DIV             [ reduce using rule 21 (expression -> expression CONC expression .) ]
+  ! IN              [ reduce using rule 21 (expression -> expression CONC expression .) ]
+  ! LBRACKET        [ shift and go to state 11 ]
+  ! CONC            [ shift and go to state 20 ]
+  ! LESS            [ shift and go to state 21 ]
+  ! MORE            [ shift and go to state 22 ]
+  ! EQUAL           [ shift and go to state 23 ]
+  ! NOTEQUAL        [ shift and go to state 24 ]
+  ! LESSE           [ shift and go to state 25 ]
+  ! MOREE           [ shift and go to state 26 ]
+  ! ANDALSO         [ shift and go to state 27 ]
+  ! ORELSE          [ shift and go to state 28 ]
+  ! SEMI            [ shift and go to state 29 ]
+
+
+state 48
+
+    (22) expression -> expression LESS expression .
+    (3) expression -> expression . LBRACKET expression RBRACKET
+    (13) expression -> expression . PLUS expression
+    (14) expression -> expression . MINUS expression
+    (15) expression -> expression . TIMES expression
+    (16) expression -> expression . DIVIDE expression
+    (17) expression -> expression . EXP expression
+    (18) expression -> expression . MOD expression
+    (19) expression -> expression . DIV expression
+    (20) expression -> expression . IN expression
+    (21) expression -> expression . CONC expression
+    (22) expression -> expression . LESS expression
+    (23) expression -> expression . MORE expression
+    (24) expression -> expression . EQUAL expression
+    (25) expression -> expression . NOTEQUAL expression
+    (26) expression -> expression . LESSE expression
+    (27) expression -> expression . MOREE expression
+    (28) expression -> expression . ANDALSO expression
+    (29) expression -> expression . ORELSE expression
+    (33) expression -> expression . SEMI
+
+    LBRACKET        reduce using rule 22 (expression -> expression LESS expression .)
+    LESS            reduce using rule 22 (expression -> expression LESS expression .)
+    MORE            reduce using rule 22 (expression -> expression LESS expression .)
+    EQUAL           reduce using rule 22 (expression -> expression LESS expression .)
+    NOTEQUAL        reduce using rule 22 (expression -> expression LESS expression .)
+    LESSE           reduce using rule 22 (expression -> expression LESS expression .)
+    MOREE           reduce using rule 22 (expression -> expression LESS expression .)
+    ANDALSO         reduce using rule 22 (expression -> expression LESS expression .)
+    ORELSE          reduce using rule 22 (expression -> expression LESS expression .)
+    SEMI            reduce using rule 22 (expression -> expression LESS expression .)
+    $end            reduce using rule 22 (expression -> expression LESS expression .)
+    RPAREN          reduce using rule 22 (expression -> expression LESS expression .)
+    COMMA           reduce using rule 22 (expression -> expression LESS expression .)
+    LPAREN          reduce using rule 22 (expression -> expression LESS expression .)
+    RBRACKET        reduce using rule 22 (expression -> expression LESS expression .)
+    PLUS            shift and go to state 12
+    MINUS           shift and go to state 13
+    TIMES           shift and go to state 14
+    DIVIDE          shift and go to state 15
+    EXP             shift and go to state 16
+    MOD             shift and go to state 17
+    DIV             shift and go to state 18
+    IN              shift and go to state 19
+    CONC            shift and go to state 20
+
+  ! PLUS            [ reduce using rule 22 (expression -> expression LESS expression .) ]
+  ! MINUS           [ reduce using rule 22 (expression -> expression LESS expression .) ]
+  ! TIMES           [ reduce using rule 22 (expression -> expression LESS expression .) ]
+  ! DIVIDE          [ reduce using rule 22 (expression -> expression LESS expression .) ]
+  ! EXP             [ reduce using rule 22 (expression -> expression LESS expression .) ]
+  ! MOD             [ reduce using rule 22 (expression -> expression LESS expression .) ]
+  ! DIV             [ reduce using rule 22 (expression -> expression LESS expression .) ]
+  ! IN              [ reduce using rule 22 (expression -> expression LESS expression .) ]
+  ! CONC            [ reduce using rule 22 (expression -> expression LESS expression .) ]
+  ! LBRACKET        [ shift and go to state 11 ]
+  ! LESS            [ shift and go to state 21 ]
+  ! MORE            [ shift and go to state 22 ]
+  ! EQUAL           [ shift and go to state 23 ]
+  ! NOTEQUAL        [ shift and go to state 24 ]
+  ! LESSE           [ shift and go to state 25 ]
+  ! MOREE           [ shift and go to state 26 ]
+  ! ANDALSO         [ shift and go to state 27 ]
+  ! ORELSE          [ shift and go to state 28 ]
+  ! SEMI            [ shift and go to state 29 ]
+
+
+state 49
+
+    (23) expression -> expression MORE expression .
+    (3) expression -> expression . LBRACKET expression RBRACKET
+    (13) expression -> expression . PLUS expression
+    (14) expression -> expression . MINUS expression
+    (15) expression -> expression . TIMES expression
+    (16) expression -> expression . DIVIDE expression
+    (17) expression -> expression . EXP expression
+    (18) expression -> expression . MOD expression
+    (19) expression -> expression . DIV expression
+    (20) expression -> expression . IN expression
+    (21) expression -> expression . CONC expression
+    (22) expression -> expression . LESS expression
+    (23) expression -> expression . MORE expression
+    (24) expression -> expression . EQUAL expression
+    (25) expression -> expression . NOTEQUAL expression
+    (26) expression -> expression . LESSE expression
+    (27) expression -> expression . MOREE expression
+    (28) expression -> expression . ANDALSO expression
+    (29) expression -> expression . ORELSE expression
+    (33) expression -> expression . SEMI
+
+    LBRACKET        reduce using rule 23 (expression -> expression MORE expression .)
+    LESS            reduce using rule 23 (expression -> expression MORE expression .)
+    MORE            reduce using rule 23 (expression -> expression MORE expression .)
+    EQUAL           reduce using rule 23 (expression -> expression MORE expression .)
+    NOTEQUAL        reduce using rule 23 (expression -> expression MORE expression .)
+    LESSE           reduce using rule 23 (expression -> expression MORE expression .)
+    MOREE           reduce using rule 23 (expression -> expression MORE expression .)
+    ANDALSO         reduce using rule 23 (expression -> expression MORE expression .)
+    ORELSE          reduce using rule 23 (expression -> expression MORE expression .)
+    SEMI            reduce using rule 23 (expression -> expression MORE expression .)
+    $end            reduce using rule 23 (expression -> expression MORE expression .)
+    RPAREN          reduce using rule 23 (expression -> expression MORE expression .)
+    COMMA           reduce using rule 23 (expression -> expression MORE expression .)
+    LPAREN          reduce using rule 23 (expression -> expression MORE expression .)
+    RBRACKET        reduce using rule 23 (expression -> expression MORE expression .)
+    PLUS            shift and go to state 12
+    MINUS           shift and go to state 13
+    TIMES           shift and go to state 14
+    DIVIDE          shift and go to state 15
+    EXP             shift and go to state 16
+    MOD             shift and go to state 17
+    DIV             shift and go to state 18
+    IN              shift and go to state 19
+    CONC            shift and go to state 20
+
+  ! PLUS            [ reduce using rule 23 (expression -> expression MORE expression .) ]
+  ! MINUS           [ reduce using rule 23 (expression -> expression MORE expression .) ]
+  ! TIMES           [ reduce using rule 23 (expression -> expression MORE expression .) ]
+  ! DIVIDE          [ reduce using rule 23 (expression -> expression MORE expression .) ]
+  ! EXP             [ reduce using rule 23 (expression -> expression MORE expression .) ]
+  ! MOD             [ reduce using rule 23 (expression -> expression MORE expression .) ]
+  ! DIV             [ reduce using rule 23 (expression -> expression MORE expression .) ]
+  ! IN              [ reduce using rule 23 (expression -> expression MORE expression .) ]
+  ! CONC            [ reduce using rule 23 (expression -> expression MORE expression .) ]
+  ! LBRACKET        [ shift and go to state 11 ]
+  ! LESS            [ shift and go to state 21 ]
+  ! MORE            [ shift and go to state 22 ]
+  ! EQUAL           [ shift and go to state 23 ]
+  ! NOTEQUAL        [ shift and go to state 24 ]
+  ! LESSE           [ shift and go to state 25 ]
+  ! MOREE           [ shift and go to state 26 ]
+  ! ANDALSO         [ shift and go to state 27 ]
+  ! ORELSE          [ shift and go to state 28 ]
+  ! SEMI            [ shift and go to state 29 ]
+
+
+state 50
+
+    (24) expression -> expression EQUAL expression .
+    (3) expression -> expression . LBRACKET expression RBRACKET
+    (13) expression -> expression . PLUS expression
+    (14) expression -> expression . MINUS expression
+    (15) expression -> expression . TIMES expression
+    (16) expression -> expression . DIVIDE expression
+    (17) expression -> expression . EXP expression
+    (18) expression -> expression . MOD expression
+    (19) expression -> expression . DIV expression
+    (20) expression -> expression . IN expression
+    (21) expression -> expression . CONC expression
+    (22) expression -> expression . LESS expression
+    (23) expression -> expression . MORE expression
+    (24) expression -> expression . EQUAL expression
+    (25) expression -> expression . NOTEQUAL expression
+    (26) expression -> expression . LESSE expression
+    (27) expression -> expression . MOREE expression
+    (28) expression -> expression . ANDALSO expression
+    (29) expression -> expression . ORELSE expression
+    (33) expression -> expression . SEMI
+
+    LBRACKET        reduce using rule 24 (expression -> expression EQUAL expression .)
+    LESS            reduce using rule 24 (expression -> expression EQUAL expression .)
+    MORE            reduce using rule 24 (expression -> expression EQUAL expression .)
+    EQUAL           reduce using rule 24 (expression -> expression EQUAL expression .)
+    NOTEQUAL        reduce using rule 24 (expression -> expression EQUAL expression .)
+    LESSE           reduce using rule 24 (expression -> expression EQUAL expression .)
+    MOREE           reduce using rule 24 (expression -> expression EQUAL expression .)
+    ANDALSO         reduce using rule 24 (expression -> expression EQUAL expression .)
+    ORELSE          reduce using rule 24 (expression -> expression EQUAL expression .)
+    SEMI            reduce using rule 24 (expression -> expression EQUAL expression .)
+    $end            reduce using rule 24 (expression -> expression EQUAL expression .)
+    RPAREN          reduce using rule 24 (expression -> expression EQUAL expression .)
+    COMMA           reduce using rule 24 (expression -> expression EQUAL expression .)
+    LPAREN          reduce using rule 24 (expression -> expression EQUAL expression .)
+    RBRACKET        reduce using rule 24 (expression -> expression EQUAL expression .)
+    PLUS            shift and go to state 12
+    MINUS           shift and go to state 13
+    TIMES           shift and go to state 14
+    DIVIDE          shift and go to state 15
+    EXP             shift and go to state 16
+    MOD             shift and go to state 17
+    DIV             shift and go to state 18
+    IN              shift and go to state 19
+    CONC            shift and go to state 20
+
+  ! PLUS            [ reduce using rule 24 (expression -> expression EQUAL expression .) ]
+  ! MINUS           [ reduce using rule 24 (expression -> expression EQUAL expression .) ]
+  ! TIMES           [ reduce using rule 24 (expression -> expression EQUAL expression .) ]
+  ! DIVIDE          [ reduce using rule 24 (expression -> expression EQUAL expression .) ]
+  ! EXP             [ reduce using rule 24 (expression -> expression EQUAL expression .) ]
+  ! MOD             [ reduce using rule 24 (expression -> expression EQUAL expression .) ]
+  ! DIV             [ reduce using rule 24 (expression -> expression EQUAL expression .) ]
+  ! IN              [ reduce using rule 24 (expression -> expression EQUAL expression .) ]
+  ! CONC            [ reduce using rule 24 (expression -> expression EQUAL expression .) ]
+  ! LBRACKET        [ shift and go to state 11 ]
+  ! LESS            [ shift and go to state 21 ]
+  ! MORE            [ shift and go to state 22 ]
+  ! EQUAL           [ shift and go to state 23 ]
+  ! NOTEQUAL        [ shift and go to state 24 ]
+  ! LESSE           [ shift and go to state 25 ]
+  ! MOREE           [ shift and go to state 26 ]
+  ! ANDALSO         [ shift and go to state 27 ]
+  ! ORELSE          [ shift and go to state 28 ]
+  ! SEMI            [ shift and go to state 29 ]
+
+
+state 51
+
+    (25) expression -> expression NOTEQUAL expression .
+    (3) expression -> expression . LBRACKET expression RBRACKET
+    (13) expression -> expression . PLUS expression
+    (14) expression -> expression . MINUS expression
+    (15) expression -> expression . TIMES expression
+    (16) expression -> expression . DIVIDE expression
+    (17) expression -> expression . EXP expression
+    (18) expression -> expression . MOD expression
+    (19) expression -> expression . DIV expression
+    (20) expression -> expression . IN expression
+    (21) expression -> expression . CONC expression
+    (22) expression -> expression . LESS expression
+    (23) expression -> expression . MORE expression
+    (24) expression -> expression . EQUAL expression
+    (25) expression -> expression . NOTEQUAL expression
+    (26) expression -> expression . LESSE expression
+    (27) expression -> expression . MOREE expression
+    (28) expression -> expression . ANDALSO expression
+    (29) expression -> expression . ORELSE expression
+    (33) expression -> expression . SEMI
+
+    LBRACKET        reduce using rule 25 (expression -> expression NOTEQUAL expression .)
+    LESS            reduce using rule 25 (expression -> expression NOTEQUAL expression .)
+    MORE            reduce using rule 25 (expression -> expression NOTEQUAL expression .)
+    EQUAL           reduce using rule 25 (expression -> expression NOTEQUAL expression .)
+    NOTEQUAL        reduce using rule 25 (expression -> expression NOTEQUAL expression .)
+    LESSE           reduce using rule 25 (expression -> expression NOTEQUAL expression .)
+    MOREE           reduce using rule 25 (expression -> expression NOTEQUAL expression .)
+    ANDALSO         reduce using rule 25 (expression -> expression NOTEQUAL expression .)
+    ORELSE          reduce using rule 25 (expression -> expression NOTEQUAL expression .)
+    SEMI            reduce using rule 25 (expression -> expression NOTEQUAL expression .)
+    $end            reduce using rule 25 (expression -> expression NOTEQUAL expression .)
+    RPAREN          reduce using rule 25 (expression -> expression NOTEQUAL expression .)
+    COMMA           reduce using rule 25 (expression -> expression NOTEQUAL expression .)
+    LPAREN          reduce using rule 25 (expression -> expression NOTEQUAL expression .)
+    RBRACKET        reduce using rule 25 (expression -> expression NOTEQUAL expression .)
+    PLUS            shift and go to state 12
+    MINUS           shift and go to state 13
+    TIMES           shift and go to state 14
+    DIVIDE          shift and go to state 15
+    EXP             shift and go to state 16
+    MOD             shift and go to state 17
+    DIV             shift and go to state 18
+    IN              shift and go to state 19
+    CONC            shift and go to state 20
+
+  ! PLUS            [ reduce using rule 25 (expression -> expression NOTEQUAL expression .) ]
+  ! MINUS           [ reduce using rule 25 (expression -> expression NOTEQUAL expression .) ]
+  ! TIMES           [ reduce using rule 25 (expression -> expression NOTEQUAL expression .) ]
+  ! DIVIDE          [ reduce using rule 25 (expression -> expression NOTEQUAL expression .) ]
+  ! EXP             [ reduce using rule 25 (expression -> expression NOTEQUAL expression .) ]
+  ! MOD             [ reduce using rule 25 (expression -> expression NOTEQUAL expression .) ]
+  ! DIV             [ reduce using rule 25 (expression -> expression NOTEQUAL expression .) ]
+  ! IN              [ reduce using rule 25 (expression -> expression NOTEQUAL expression .) ]
+  ! CONC            [ reduce using rule 25 (expression -> expression NOTEQUAL expression .) ]
+  ! LBRACKET        [ shift and go to state 11 ]
+  ! LESS            [ shift and go to state 21 ]
+  ! MORE            [ shift and go to state 22 ]
+  ! EQUAL           [ shift and go to state 23 ]
+  ! NOTEQUAL        [ shift and go to state 24 ]
+  ! LESSE           [ shift and go to state 25 ]
+  ! MOREE           [ shift and go to state 26 ]
+  ! ANDALSO         [ shift and go to state 27 ]
+  ! ORELSE          [ shift and go to state 28 ]
+  ! SEMI            [ shift and go to state 29 ]
+
+
+state 52
+
+    (26) expression -> expression LESSE expression .
+    (3) expression -> expression . LBRACKET expression RBRACKET
+    (13) expression -> expression . PLUS expression
+    (14) expression -> expression . MINUS expression
+    (15) expression -> expression . TIMES expression
+    (16) expression -> expression . DIVIDE expression
+    (17) expression -> expression . EXP expression
+    (18) expression -> expression . MOD expression
+    (19) expression -> expression . DIV expression
+    (20) expression -> expression . IN expression
+    (21) expression -> expression . CONC expression
+    (22) expression -> expression . LESS expression
+    (23) expression -> expression . MORE expression
+    (24) expression -> expression . EQUAL expression
+    (25) expression -> expression . NOTEQUAL expression
+    (26) expression -> expression . LESSE expression
+    (27) expression -> expression . MOREE expression
+    (28) expression -> expression . ANDALSO expression
+    (29) expression -> expression . ORELSE expression
+    (33) expression -> expression . SEMI
+
+    LBRACKET        reduce using rule 26 (expression -> expression LESSE expression .)
+    LESS            reduce using rule 26 (expression -> expression LESSE expression .)
+    MORE            reduce using rule 26 (expression -> expression LESSE expression .)
+    EQUAL           reduce using rule 26 (expression -> expression LESSE expression .)
+    NOTEQUAL        reduce using rule 26 (expression -> expression LESSE expression .)
+    LESSE           reduce using rule 26 (expression -> expression LESSE expression .)
+    MOREE           reduce using rule 26 (expression -> expression LESSE expression .)
+    ANDALSO         reduce using rule 26 (expression -> expression LESSE expression .)
+    ORELSE          reduce using rule 26 (expression -> expression LESSE expression .)
+    SEMI            reduce using rule 26 (expression -> expression LESSE expression .)
+    $end            reduce using rule 26 (expression -> expression LESSE expression .)
+    RPAREN          reduce using rule 26 (expression -> expression LESSE expression .)
+    COMMA           reduce using rule 26 (expression -> expression LESSE expression .)
+    LPAREN          reduce using rule 26 (expression -> expression LESSE expression .)
+    RBRACKET        reduce using rule 26 (expression -> expression LESSE expression .)
+    PLUS            shift and go to state 12
+    MINUS           shift and go to state 13
+    TIMES           shift and go to state 14
+    DIVIDE          shift and go to state 15
+    EXP             shift and go to state 16
+    MOD             shift and go to state 17
+    DIV             shift and go to state 18
+    IN              shift and go to state 19
+    CONC            shift and go to state 20
+
+  ! PLUS            [ reduce using rule 26 (expression -> expression LESSE expression .) ]
+  ! MINUS           [ reduce using rule 26 (expression -> expression LESSE expression .) ]
+  ! TIMES           [ reduce using rule 26 (expression -> expression LESSE expression .) ]
+  ! DIVIDE          [ reduce using rule 26 (expression -> expression LESSE expression .) ]
+  ! EXP             [ reduce using rule 26 (expression -> expression LESSE expression .) ]
+  ! MOD             [ reduce using rule 26 (expression -> expression LESSE expression .) ]
+  ! DIV             [ reduce using rule 26 (expression -> expression LESSE expression .) ]
+  ! IN              [ reduce using rule 26 (expression -> expression LESSE expression .) ]
+  ! CONC            [ reduce using rule 26 (expression -> expression LESSE expression .) ]
+  ! LBRACKET        [ shift and go to state 11 ]
+  ! LESS            [ shift and go to state 21 ]
+  ! MORE            [ shift and go to state 22 ]
+  ! EQUAL           [ shift and go to state 23 ]
+  ! NOTEQUAL        [ shift and go to state 24 ]
+  ! LESSE           [ shift and go to state 25 ]
+  ! MOREE           [ shift and go to state 26 ]
+  ! ANDALSO         [ shift and go to state 27 ]
+  ! ORELSE          [ shift and go to state 28 ]
+  ! SEMI            [ shift and go to state 29 ]
+
+
+state 53
+
+    (27) expression -> expression MOREE expression .
+    (3) expression -> expression . LBRACKET expression RBRACKET
+    (13) expression -> expression . PLUS expression
+    (14) expression -> expression . MINUS expression
+    (15) expression -> expression . TIMES expression
+    (16) expression -> expression . DIVIDE expression
+    (17) expression -> expression . EXP expression
+    (18) expression -> expression . MOD expression
+    (19) expression -> expression . DIV expression
+    (20) expression -> expression . IN expression
+    (21) expression -> expression . CONC expression
+    (22) expression -> expression . LESS expression
+    (23) expression -> expression . MORE expression
+    (24) expression -> expression . EQUAL expression
+    (25) expression -> expression . NOTEQUAL expression
+    (26) expression -> expression . LESSE expression
+    (27) expression -> expression . MOREE expression
+    (28) expression -> expression . ANDALSO expression
+    (29) expression -> expression . ORELSE expression
+    (33) expression -> expression . SEMI
+
+    LBRACKET        reduce using rule 27 (expression -> expression MOREE expression .)
+    LESS            reduce using rule 27 (expression -> expression MOREE expression .)
+    MORE            reduce using rule 27 (expression -> expression MOREE expression .)
+    EQUAL           reduce using rule 27 (expression -> expression MOREE expression .)
+    NOTEQUAL        reduce using rule 27 (expression -> expression MOREE expression .)
+    LESSE           reduce using rule 27 (expression -> expression MOREE expression .)
+    MOREE           reduce using rule 27 (expression -> expression MOREE expression .)
+    ANDALSO         reduce using rule 27 (expression -> expression MOREE expression .)
+    ORELSE          reduce using rule 27 (expression -> expression MOREE expression .)
+    SEMI            reduce using rule 27 (expression -> expression MOREE expression .)
+    $end            reduce using rule 27 (expression -> expression MOREE expression .)
+    RPAREN          reduce using rule 27 (expression -> expression MOREE expression .)
+    COMMA           reduce using rule 27 (expression -> expression MOREE expression .)
+    LPAREN          reduce using rule 27 (expression -> expression MOREE expression .)
+    RBRACKET        reduce using rule 27 (expression -> expression MOREE expression .)
+    PLUS            shift and go to state 12
+    MINUS           shift and go to state 13
+    TIMES           shift and go to state 14
+    DIVIDE          shift and go to state 15
+    EXP             shift and go to state 16
+    MOD             shift and go to state 17
+    DIV             shift and go to state 18
+    IN              shift and go to state 19
+    CONC            shift and go to state 20
+
+  ! PLUS            [ reduce using rule 27 (expression -> expression MOREE expression .) ]
+  ! MINUS           [ reduce using rule 27 (expression -> expression MOREE expression .) ]
+  ! TIMES           [ reduce using rule 27 (expression -> expression MOREE expression .) ]
+  ! DIVIDE          [ reduce using rule 27 (expression -> expression MOREE expression .) ]
+  ! EXP             [ reduce using rule 27 (expression -> expression MOREE expression .) ]
+  ! MOD             [ reduce using rule 27 (expression -> expression MOREE expression .) ]
+  ! DIV             [ reduce using rule 27 (expression -> expression MOREE expression .) ]
+  ! IN              [ reduce using rule 27 (expression -> expression MOREE expression .) ]
+  ! CONC            [ reduce using rule 27 (expression -> expression MOREE expression .) ]
+  ! LBRACKET        [ shift and go to state 11 ]
+  ! LESS            [ shift and go to state 21 ]
+  ! MORE            [ shift and go to state 22 ]
+  ! EQUAL           [ shift and go to state 23 ]
+  ! NOTEQUAL        [ shift and go to state 24 ]
+  ! LESSE           [ shift and go to state 25 ]
+  ! MOREE           [ shift and go to state 26 ]
+  ! ANDALSO         [ shift and go to state 27 ]
+  ! ORELSE          [ shift and go to state 28 ]
+  ! SEMI            [ shift and go to state 29 ]
+
+
+state 54
+
+    (28) expression -> expression ANDALSO expression .
+    (3) expression -> expression . LBRACKET expression RBRACKET
+    (13) expression -> expression . PLUS expression
+    (14) expression -> expression . MINUS expression
+    (15) expression -> expression . TIMES expression
+    (16) expression -> expression . DIVIDE expression
+    (17) expression -> expression . EXP expression
+    (18) expression -> expression . MOD expression
+    (19) expression -> expression . DIV expression
+    (20) expression -> expression . IN expression
+    (21) expression -> expression . CONC expression
+    (22) expression -> expression . LESS expression
+    (23) expression -> expression . MORE expression
+    (24) expression -> expression . EQUAL expression
+    (25) expression -> expression . NOTEQUAL expression
+    (26) expression -> expression . LESSE expression
+    (27) expression -> expression . MOREE expression
+    (28) expression -> expression . ANDALSO expression
+    (29) expression -> expression . ORELSE expression
+    (33) expression -> expression . SEMI
+
+    LBRACKET        reduce using rule 28 (expression -> expression ANDALSO expression .)
+    ANDALSO         reduce using rule 28 (expression -> expression ANDALSO expression .)
+    ORELSE          reduce using rule 28 (expression -> expression ANDALSO expression .)
+    SEMI            reduce using rule 28 (expression -> expression ANDALSO expression .)
+    $end            reduce using rule 28 (expression -> expression ANDALSO expression .)
+    RPAREN          reduce using rule 28 (expression -> expression ANDALSO expression .)
+    COMMA           reduce using rule 28 (expression -> expression ANDALSO expression .)
+    LPAREN          reduce using rule 28 (expression -> expression ANDALSO expression .)
+    RBRACKET        reduce using rule 28 (expression -> expression ANDALSO expression .)
+    PLUS            shift and go to state 12
+    MINUS           shift and go to state 13
+    TIMES           shift and go to state 14
+    DIVIDE          shift and go to state 15
+    EXP             shift and go to state 16
+    MOD             shift and go to state 17
+    DIV             shift and go to state 18
+    IN              shift and go to state 19
+    CONC            shift and go to state 20
+    LESS            shift and go to state 21
+    MORE            shift and go to state 22
+    EQUAL           shift and go to state 23
+    NOTEQUAL        shift and go to state 24
+    LESSE           shift and go to state 25
+    MOREE           shift and go to state 26
+
+  ! PLUS            [ reduce using rule 28 (expression -> expression ANDALSO expression .) ]
+  ! MINUS           [ reduce using rule 28 (expression -> expression ANDALSO expression .) ]
+  ! TIMES           [ reduce using rule 28 (expression -> expression ANDALSO expression .) ]
+  ! DIVIDE          [ reduce using rule 28 (expression -> expression ANDALSO expression .) ]
+  ! EXP             [ reduce using rule 28 (expression -> expression ANDALSO expression .) ]
+  ! MOD             [ reduce using rule 28 (expression -> expression ANDALSO expression .) ]
+  ! DIV             [ reduce using rule 28 (expression -> expression ANDALSO expression .) ]
+  ! IN              [ reduce using rule 28 (expression -> expression ANDALSO expression .) ]
+  ! CONC            [ reduce using rule 28 (expression -> expression ANDALSO expression .) ]
+  ! LESS            [ reduce using rule 28 (expression -> expression ANDALSO expression .) ]
+  ! MORE            [ reduce using rule 28 (expression -> expression ANDALSO expression .) ]
+  ! EQUAL           [ reduce using rule 28 (expression -> expression ANDALSO expression .) ]
+  ! NOTEQUAL        [ reduce using rule 28 (expression -> expression ANDALSO expression .) ]
+  ! LESSE           [ reduce using rule 28 (expression -> expression ANDALSO expression .) ]
+  ! MOREE           [ reduce using rule 28 (expression -> expression ANDALSO expression .) ]
+  ! LBRACKET        [ shift and go to state 11 ]
+  ! ANDALSO         [ shift and go to state 27 ]
+  ! ORELSE          [ shift and go to state 28 ]
+  ! SEMI            [ shift and go to state 29 ]
+
+
+state 55
+
+    (29) expression -> expression ORELSE expression .
+    (3) expression -> expression . LBRACKET expression RBRACKET
+    (13) expression -> expression . PLUS expression
+    (14) expression -> expression . MINUS expression
+    (15) expression -> expression . TIMES expression
+    (16) expression -> expression . DIVIDE expression
+    (17) expression -> expression . EXP expression
+    (18) expression -> expression . MOD expression
+    (19) expression -> expression . DIV expression
+    (20) expression -> expression . IN expression
+    (21) expression -> expression . CONC expression
+    (22) expression -> expression . LESS expression
+    (23) expression -> expression . MORE expression
+    (24) expression -> expression . EQUAL expression
+    (25) expression -> expression . NOTEQUAL expression
+    (26) expression -> expression . LESSE expression
+    (27) expression -> expression . MOREE expression
+    (28) expression -> expression . ANDALSO expression
+    (29) expression -> expression . ORELSE expression
+    (33) expression -> expression . SEMI
+
+    LBRACKET        reduce using rule 29 (expression -> expression ORELSE expression .)
+    ANDALSO         reduce using rule 29 (expression -> expression ORELSE expression .)
+    ORELSE          reduce using rule 29 (expression -> expression ORELSE expression .)
+    SEMI            reduce using rule 29 (expression -> expression ORELSE expression .)
+    $end            reduce using rule 29 (expression -> expression ORELSE expression .)
+    RPAREN          reduce using rule 29 (expression -> expression ORELSE expression .)
+    COMMA           reduce using rule 29 (expression -> expression ORELSE expression .)
+    LPAREN          reduce using rule 29 (expression -> expression ORELSE expression .)
+    RBRACKET        reduce using rule 29 (expression -> expression ORELSE expression .)
+    PLUS            shift and go to state 12
+    MINUS           shift and go to state 13
+    TIMES           shift and go to state 14
+    DIVIDE          shift and go to state 15
+    EXP             shift and go to state 16
+    MOD             shift and go to state 17
+    DIV             shift and go to state 18
+    IN              shift and go to state 19
+    CONC            shift and go to state 20
+    LESS            shift and go to state 21
+    MORE            shift and go to state 22
+    EQUAL           shift and go to state 23
+    NOTEQUAL        shift and go to state 24
+    LESSE           shift and go to state 25
+    MOREE           shift and go to state 26
+
+  ! PLUS            [ reduce using rule 29 (expression -> expression ORELSE expression .) ]
+  ! MINUS           [ reduce using rule 29 (expression -> expression ORELSE expression .) ]
+  ! TIMES           [ reduce using rule 29 (expression -> expression ORELSE expression .) ]
+  ! DIVIDE          [ reduce using rule 29 (expression -> expression ORELSE expression .) ]
+  ! EXP             [ reduce using rule 29 (expression -> expression ORELSE expression .) ]
+  ! MOD             [ reduce using rule 29 (expression -> expression ORELSE expression .) ]
+  ! DIV             [ reduce using rule 29 (expression -> expression ORELSE expression .) ]
+  ! IN              [ reduce using rule 29 (expression -> expression ORELSE expression .) ]
+  ! CONC            [ reduce using rule 29 (expression -> expression ORELSE expression .) ]
+  ! LESS            [ reduce using rule 29 (expression -> expression ORELSE expression .) ]
+  ! MORE            [ reduce using rule 29 (expression -> expression ORELSE expression .) ]
+  ! EQUAL           [ reduce using rule 29 (expression -> expression ORELSE expression .) ]
+  ! NOTEQUAL        [ reduce using rule 29 (expression -> expression ORELSE expression .) ]
+  ! LESSE           [ reduce using rule 29 (expression -> expression ORELSE expression .) ]
+  ! MOREE           [ reduce using rule 29 (expression -> expression ORELSE expression .) ]
+  ! LBRACKET        [ shift and go to state 11 ]
+  ! ANDALSO         [ shift and go to state 27 ]
+  ! ORELSE          [ shift and go to state 28 ]
+  ! SEMI            [ shift and go to state 29 ]
+
+
+state 56
+
+    (1) expression -> LPAREN expression RPAREN .
+
+    LBRACKET        reduce using rule 1 (expression -> LPAREN expression RPAREN .)
+    PLUS            reduce using rule 1 (expression -> LPAREN expression RPAREN .)
+    MINUS           reduce using rule 1 (expression -> LPAREN expression RPAREN .)
+    TIMES           reduce using rule 1 (expression -> LPAREN expression RPAREN .)
+    DIVIDE          reduce using rule 1 (expression -> LPAREN expression RPAREN .)
+    EXP             reduce using rule 1 (expression -> LPAREN expression RPAREN .)
+    MOD             reduce using rule 1 (expression -> LPAREN expression RPAREN .)
+    DIV             reduce using rule 1 (expression -> LPAREN expression RPAREN .)
+    IN              reduce using rule 1 (expression -> LPAREN expression RPAREN .)
+    CONC            reduce using rule 1 (expression -> LPAREN expression RPAREN .)
+    LESS            reduce using rule 1 (expression -> LPAREN expression RPAREN .)
+    MORE            reduce using rule 1 (expression -> LPAREN expression RPAREN .)
+    EQUAL           reduce using rule 1 (expression -> LPAREN expression RPAREN .)
+    NOTEQUAL        reduce using rule 1 (expression -> LPAREN expression RPAREN .)
+    LESSE           reduce using rule 1 (expression -> LPAREN expression RPAREN .)
+    MOREE           reduce using rule 1 (expression -> LPAREN expression RPAREN .)
+    ANDALSO         reduce using rule 1 (expression -> LPAREN expression RPAREN .)
+    ORELSE          reduce using rule 1 (expression -> LPAREN expression RPAREN .)
+    SEMI            reduce using rule 1 (expression -> LPAREN expression RPAREN .)
+    $end            reduce using rule 1 (expression -> LPAREN expression RPAREN .)
+    RPAREN          reduce using rule 1 (expression -> LPAREN expression RPAREN .)
+    COMMA           reduce using rule 1 (expression -> LPAREN expression RPAREN .)
+    LPAREN          reduce using rule 1 (expression -> LPAREN expression RPAREN .)
+    RBRACKET        reduce using rule 1 (expression -> LPAREN expression RPAREN .)
+
+
+state 57
+
+    (10) tuple -> LPAREN series RPAREN .
+
+    LBRACKET        reduce using rule 10 (tuple -> LPAREN series RPAREN .)
+    PLUS            reduce using rule 10 (tuple -> LPAREN series RPAREN .)
+    MINUS           reduce using rule 10 (tuple -> LPAREN series RPAREN .)
+    TIMES           reduce using rule 10 (tuple -> LPAREN series RPAREN .)
+    DIVIDE          reduce using rule 10 (tuple -> LPAREN series RPAREN .)
+    EXP             reduce using rule 10 (tuple -> LPAREN series RPAREN .)
+    MOD             reduce using rule 10 (tuple -> LPAREN series RPAREN .)
+    DIV             reduce using rule 10 (tuple -> LPAREN series RPAREN .)
+    IN              reduce using rule 10 (tuple -> LPAREN series RPAREN .)
+    CONC            reduce using rule 10 (tuple -> LPAREN series RPAREN .)
+    LESS            reduce using rule 10 (tuple -> LPAREN series RPAREN .)
+    MORE            reduce using rule 10 (tuple -> LPAREN series RPAREN .)
+    EQUAL           reduce using rule 10 (tuple -> LPAREN series RPAREN .)
+    NOTEQUAL        reduce using rule 10 (tuple -> LPAREN series RPAREN .)
+    LESSE           reduce using rule 10 (tuple -> LPAREN series RPAREN .)
+    MOREE           reduce using rule 10 (tuple -> LPAREN series RPAREN .)
+    ANDALSO         reduce using rule 10 (tuple -> LPAREN series RPAREN .)
+    ORELSE          reduce using rule 10 (tuple -> LPAREN series RPAREN .)
+    SEMI            reduce using rule 10 (tuple -> LPAREN series RPAREN .)
+    $end            reduce using rule 10 (tuple -> LPAREN series RPAREN .)
+    RPAREN          reduce using rule 10 (tuple -> LPAREN series RPAREN .)
+    COMMA           reduce using rule 10 (tuple -> LPAREN series RPAREN .)
+    LPAREN          reduce using rule 10 (tuple -> LPAREN series RPAREN .)
+    RBRACKET        reduce using rule 10 (tuple -> LPAREN series RPAREN .)
+
+
+state 58
+
+    (6) series -> series COMMA . expression
+    (1) expression -> . LPAREN expression RPAREN
+    (2) expression -> . POUND expression tuple
+    (3) expression -> . expression LBRACKET expression RBRACKET
+    (4) expression -> . list
+    (5) expression -> . tuple
+    (12) expression -> . NOT expression
+    (13) expression -> . expression PLUS expression
+    (14) expression -> . expression MINUS expression
+    (15) expression -> . expression TIMES expression
+    (16) expression -> . expression DIVIDE expression
+    (17) expression -> . expression EXP expression
+    (18) expression -> . expression MOD expression
+    (19) expression -> . expression DIV expression
+    (20) expression -> . expression IN expression
+    (21) expression -> . expression CONC expression
+    (22) expression -> . expression LESS expression
+    (23) expression -> . expression MORE expression
+    (24) expression -> . expression EQUAL expression
+    (25) expression -> . expression NOTEQUAL expression
+    (26) expression -> . expression LESSE expression
+    (27) expression -> . expression MOREE expression
+    (28) expression -> . expression ANDALSO expression
+    (29) expression -> . expression ORELSE expression
+    (30) expression -> . NUMBER
+    (31) expression -> . STRING
+    (32) expression -> . BOOLEAN
+    (33) expression -> . expression SEMI
+    (8) list -> . LBRACKET series RBRACKET
+    (9) list -> . LBRACKET RBRACKET
+    (10) tuple -> . LPAREN series RPAREN
+    (11) tuple -> . LPAREN RPAREN
+
+    LPAREN          shift and go to state 2
+    POUND           shift and go to state 3
+    NOT             shift and go to state 7
+    NUMBER          shift and go to state 8
+    STRING          shift and go to state 9
+    BOOLEAN         shift and go to state 10
+    LBRACKET        shift and go to state 5
+
+    expression                     shift and go to state 63
+    tuple                          shift and go to state 4
+    list                           shift and go to state 6
+
+state 59
+
+    (2) expression -> POUND expression tuple .
+
+    LBRACKET        reduce using rule 2 (expression -> POUND expression tuple .)
+    PLUS            reduce using rule 2 (expression -> POUND expression tuple .)
+    MINUS           reduce using rule 2 (expression -> POUND expression tuple .)
+    TIMES           reduce using rule 2 (expression -> POUND expression tuple .)
+    DIVIDE          reduce using rule 2 (expression -> POUND expression tuple .)
+    EXP             reduce using rule 2 (expression -> POUND expression tuple .)
+    MOD             reduce using rule 2 (expression -> POUND expression tuple .)
+    DIV             reduce using rule 2 (expression -> POUND expression tuple .)
+    IN              reduce using rule 2 (expression -> POUND expression tuple .)
+    CONC            reduce using rule 2 (expression -> POUND expression tuple .)
+    LESS            reduce using rule 2 (expression -> POUND expression tuple .)
+    MORE            reduce using rule 2 (expression -> POUND expression tuple .)
+    EQUAL           reduce using rule 2 (expression -> POUND expression tuple .)
+    NOTEQUAL        reduce using rule 2 (expression -> POUND expression tuple .)
+    LESSE           reduce using rule 2 (expression -> POUND expression tuple .)
+    MOREE           reduce using rule 2 (expression -> POUND expression tuple .)
+    ANDALSO         reduce using rule 2 (expression -> POUND expression tuple .)
+    ORELSE          reduce using rule 2 (expression -> POUND expression tuple .)
+    SEMI            reduce using rule 2 (expression -> POUND expression tuple .)
+    $end            reduce using rule 2 (expression -> POUND expression tuple .)
+    RPAREN          reduce using rule 2 (expression -> POUND expression tuple .)
+    COMMA           reduce using rule 2 (expression -> POUND expression tuple .)
+    LPAREN          reduce using rule 2 (expression -> POUND expression tuple .)
+    RBRACKET        reduce using rule 2 (expression -> POUND expression tuple .)
+
+
+state 60
+
+    (10) tuple -> LPAREN . series RPAREN
+    (11) tuple -> LPAREN . RPAREN
+    (6) series -> . series COMMA expression
+    (7) series -> . expression
+    (1) expression -> . LPAREN expression RPAREN
+    (2) expression -> . POUND expression tuple
+    (3) expression -> . expression LBRACKET expression RBRACKET
+    (4) expression -> . list
+    (5) expression -> . tuple
+    (12) expression -> . NOT expression
+    (13) expression -> . expression PLUS expression
+    (14) expression -> . expression MINUS expression
+    (15) expression -> . expression TIMES expression
+    (16) expression -> . expression DIVIDE expression
+    (17) expression -> . expression EXP expression
+    (18) expression -> . expression MOD expression
+    (19) expression -> . expression DIV expression
+    (20) expression -> . expression IN expression
+    (21) expression -> . expression CONC expression
+    (22) expression -> . expression LESS expression
+    (23) expression -> . expression MORE expression
+    (24) expression -> . expression EQUAL expression
+    (25) expression -> . expression NOTEQUAL expression
+    (26) expression -> . expression LESSE expression
+    (27) expression -> . expression MOREE expression
+    (28) expression -> . expression ANDALSO expression
+    (29) expression -> . expression ORELSE expression
+    (30) expression -> . NUMBER
+    (31) expression -> . STRING
+    (32) expression -> . BOOLEAN
+    (33) expression -> . expression SEMI
+    (8) list -> . LBRACKET series RBRACKET
+    (9) list -> . LBRACKET RBRACKET
+    (10) tuple -> . LPAREN series RPAREN
+    (11) tuple -> . LPAREN RPAREN
+
+    RPAREN          shift and go to state 31
+    LPAREN          shift and go to state 2
+    POUND           shift and go to state 3
+    NOT             shift and go to state 7
+    NUMBER          shift and go to state 8
+    STRING          shift and go to state 9
+    BOOLEAN         shift and go to state 10
+    LBRACKET        shift and go to state 5
+
+    series                         shift and go to state 32
+    expression                     shift and go to state 36
+    tuple                          shift and go to state 4
+    list                           shift and go to state 6
+
+state 61
+
+    (8) list -> LBRACKET series RBRACKET .
+
+    LBRACKET        reduce using rule 8 (list -> LBRACKET series RBRACKET .)
+    PLUS            reduce using rule 8 (list -> LBRACKET series RBRACKET .)
+    MINUS           reduce using rule 8 (list -> LBRACKET series RBRACKET .)
+    TIMES           reduce using rule 8 (list -> LBRACKET series RBRACKET .)
+    DIVIDE          reduce using rule 8 (list -> LBRACKET series RBRACKET .)
+    EXP             reduce using rule 8 (list -> LBRACKET series RBRACKET .)
+    MOD             reduce using rule 8 (list -> LBRACKET series RBRACKET .)
+    DIV             reduce using rule 8 (list -> LBRACKET series RBRACKET .)
+    IN              reduce using rule 8 (list -> LBRACKET series RBRACKET .)
+    CONC            reduce using rule 8 (list -> LBRACKET series RBRACKET .)
+    LESS            reduce using rule 8 (list -> LBRACKET series RBRACKET .)
+    MORE            reduce using rule 8 (list -> LBRACKET series RBRACKET .)
+    EQUAL           reduce using rule 8 (list -> LBRACKET series RBRACKET .)
+    NOTEQUAL        reduce using rule 8 (list -> LBRACKET series RBRACKET .)
+    LESSE           reduce using rule 8 (list -> LBRACKET series RBRACKET .)
+    MOREE           reduce using rule 8 (list -> LBRACKET series RBRACKET .)
+    ANDALSO         reduce using rule 8 (list -> LBRACKET series RBRACKET .)
+    ORELSE          reduce using rule 8 (list -> LBRACKET series RBRACKET .)
+    SEMI            reduce using rule 8 (list -> LBRACKET series RBRACKET .)
+    $end            reduce using rule 8 (list -> LBRACKET series RBRACKET .)
+    RPAREN          reduce using rule 8 (list -> LBRACKET series RBRACKET .)
+    COMMA           reduce using rule 8 (list -> LBRACKET series RBRACKET .)
+    LPAREN          reduce using rule 8 (list -> LBRACKET series RBRACKET .)
+    RBRACKET        reduce using rule 8 (list -> LBRACKET series RBRACKET .)
+
+
+state 62
+
+    (3) expression -> expression LBRACKET expression RBRACKET .
+
+    LBRACKET        reduce using rule 3 (expression -> expression LBRACKET expression RBRACKET .)
+    PLUS            reduce using rule 3 (expression -> expression LBRACKET expression RBRACKET .)
+    MINUS           reduce using rule 3 (expression -> expression LBRACKET expression RBRACKET .)
+    TIMES           reduce using rule 3 (expression -> expression LBRACKET expression RBRACKET .)
+    DIVIDE          reduce using rule 3 (expression -> expression LBRACKET expression RBRACKET .)
+    EXP             reduce using rule 3 (expression -> expression LBRACKET expression RBRACKET .)
+    MOD             reduce using rule 3 (expression -> expression LBRACKET expression RBRACKET .)
+    DIV             reduce using rule 3 (expression -> expression LBRACKET expression RBRACKET .)
+    IN              reduce using rule 3 (expression -> expression LBRACKET expression RBRACKET .)
+    CONC            reduce using rule 3 (expression -> expression LBRACKET expression RBRACKET .)
+    LESS            reduce using rule 3 (expression -> expression LBRACKET expression RBRACKET .)
+    MORE            reduce using rule 3 (expression -> expression LBRACKET expression RBRACKET .)
+    EQUAL           reduce using rule 3 (expression -> expression LBRACKET expression RBRACKET .)
+    NOTEQUAL        reduce using rule 3 (expression -> expression LBRACKET expression RBRACKET .)
+    LESSE           reduce using rule 3 (expression -> expression LBRACKET expression RBRACKET .)
+    MOREE           reduce using rule 3 (expression -> expression LBRACKET expression RBRACKET .)
+    ANDALSO         reduce using rule 3 (expression -> expression LBRACKET expression RBRACKET .)
+    ORELSE          reduce using rule 3 (expression -> expression LBRACKET expression RBRACKET .)
+    SEMI            reduce using rule 3 (expression -> expression LBRACKET expression RBRACKET .)
+    $end            reduce using rule 3 (expression -> expression LBRACKET expression RBRACKET .)
+    RPAREN          reduce using rule 3 (expression -> expression LBRACKET expression RBRACKET .)
+    COMMA           reduce using rule 3 (expression -> expression LBRACKET expression RBRACKET .)
+    LPAREN          reduce using rule 3 (expression -> expression LBRACKET expression RBRACKET .)
+    RBRACKET        reduce using rule 3 (expression -> expression LBRACKET expression RBRACKET .)
+
+
+state 63
+
+    (6) series -> series COMMA expression .
+    (3) expression -> expression . LBRACKET expression RBRACKET
+    (13) expression -> expression . PLUS expression
+    (14) expression -> expression . MINUS expression
+    (15) expression -> expression . TIMES expression
+    (16) expression -> expression . DIVIDE expression
+    (17) expression -> expression . EXP expression
+    (18) expression -> expression . MOD expression
+    (19) expression -> expression . DIV expression
+    (20) expression -> expression . IN expression
+    (21) expression -> expression . CONC expression
+    (22) expression -> expression . LESS expression
+    (23) expression -> expression . MORE expression
+    (24) expression -> expression . EQUAL expression
+    (25) expression -> expression . NOTEQUAL expression
+    (26) expression -> expression . LESSE expression
+    (27) expression -> expression . MOREE expression
+    (28) expression -> expression . ANDALSO expression
+    (29) expression -> expression . ORELSE expression
+    (33) expression -> expression . SEMI
+
+    RPAREN          reduce using rule 6 (series -> series COMMA expression .)
+    COMMA           reduce using rule 6 (series -> series COMMA expression .)
+    RBRACKET        reduce using rule 6 (series -> series COMMA expression .)
+    LBRACKET        shift and go to state 11
+    PLUS            shift and go to state 12
+    MINUS           shift and go to state 13
+    TIMES           shift and go to state 14
+    DIVIDE          shift and go to state 15
+    EXP             shift and go to state 16
+    MOD             shift and go to state 17
+    DIV             shift and go to state 18
+    IN              shift and go to state 19
+    CONC            shift and go to state 20
+    LESS            shift and go to state 21
+    MORE            shift and go to state 22
+    EQUAL           shift and go to state 23
+    NOTEQUAL        shift and go to state 24
+    LESSE           shift and go to state 25
+    MOREE           shift and go to state 26
+    ANDALSO         shift and go to state 27
+    ORELSE          shift and go to state 28
+    SEMI            shift and go to state 29
+
+WARNING: 
+WARNING: Conflicts:
+WARNING: 
+WARNING: shift/reduce conflict for RPAREN in state 30 resolved as shift

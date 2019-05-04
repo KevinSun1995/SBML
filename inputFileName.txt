@@ -1,0 +1,49 @@
+fun isPrime(x,y) =
+{
+    if(x mod y == 0)
+    {
+        r = False;
+    }
+    else
+    {
+        if(y * y >= x)
+        {
+            r = True;
+        }
+        else
+        {
+            r = isPrime(x,y+1);
+        }
+    }
+}r;
+
+fun goldbachhelp(x,y) =
+{
+    if(x mod 2 == 1)
+    {
+        output = [];
+    }
+    else
+    {
+
+        if(isPrime(y,2) andalso isPrime(x-y,2))
+        {
+            output =  [x-y,y];
+        }
+        else
+        {
+
+            output = goldbachhelp(x,y+1);
+        }
+    }
+}output;
+
+fun goldbach(x) =
+{
+    o = goldbachhelp(x,2);
+}o;
+
+
+{
+    print(goldbach(20));
+}
